@@ -1,0 +1,48 @@
+{
+ "run_id": "pilot_20261107_211217",
+ "status": "trained",
+ "model": {
+  "x_dim": 32,
+  "z_dim": 32,
+  "hidden": 128,
+  "n_hidden": 1,
+  "activation": "relu",
+  "lr": 0.0002,
+  "beta1": 0.5,
+  "beta2": 0.999,
+  "batch_size": 256,
+  "epochs": 20,
+  "d_steps": 1,
+  "seed": 1,
+  "latent_prior": "normal"
+ },
+ "training_rows": 300,
+ "calibration_rows": 100,
+ "training_seeds": [
+  101,
+  102,
+  103
+ ],
+ "calibration_seed": 104,
+ "training_feature_file_sha256": [
+  "401a36e0e66af38a992b223dd9c56a3d435fdc35af7d9343e3c0bb6abe0437bc",
+  "ee5f29c1434a59eef234fde503586d38ec8bbb2c269cdb6fbd1d561d55a500cb",
+  "ca1e0c38be3f08bf58bd9aeb720c7e7d4ffa533721158fc41bbf312955b5460f",
+  "21cf5f842c8c89aee62e6124b738cc6117f55dce9eaff6d7706798038519bb23",
+  "931cf9d315bd89f4605b1d85dcf855ac34d7a73de5f785f78aba51e79a0b4a24",
+  "8b902555be06dd5372ab7e4b42152f9c952d2450ce2ffc1b97a50ddac39fb759"
+ ],
+ "calibration_telemetry_sha256": {
+  "node": "3c71ea0aca6fd1a6464f7ede634541e0ec53adcd5e49069cd983ca5d6681e3e9",
+  "links": "2086fc9b3fb517e23bd22dbe016d022a5368c19b2c22155e6eb8e928a739fd60"
+ },
+ "training_seconds": 0.8598777079896536,
+ "calibration_threshold": 0.38273680210113525,
+ "calibration_empirical_fpr": 0.05,
+ "calibration_score_min": -0.26638534665107727,
+ "calibration_score_median": -0.007828744128346443,
+ "calibration_score_max": 1.9742358922958374,
+ "parameter_count": 25153,
+ "model_bytes": 104667,
+ "uses_ground_truth": false
+}

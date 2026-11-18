@@ -1,0 +1,35 @@
+{
+ "pass": true,
+ "scenarios": [
+  {
+   "n": 20,
+   "seed": 1,
+   "snapshot_identical": true,
+   "dto_input_window0_identical": true,
+   "full_node_window0_differing_columns": [],
+   "full_links_window0_differing_columns": [],
+   "snapshot_t_s": 8.3,
+   "pass": true
+  },
+  {
+   "n": 60,
+   "seed": 1,
+   "snapshot_identical": true,
+   "dto_input_window0_identical": true,
+   "full_node_window0_differing_columns": [],
+   "full_links_window0_differing_columns": [],
+   "snapshot_t_s": 8.3,
+   "pass": true
+  },
+  {
+   "n": 100,
+   "seed": 1,
+   "snapshot_identical": true,
+   "dto_input_window0_identical": true,
+   "full_node_window0_differing_columns": [],
+   "full_links_window0_differing_columns": [],
+   "snapshot_t_s": 8.3,
+   "pass": true
+  }
+ ]
+}

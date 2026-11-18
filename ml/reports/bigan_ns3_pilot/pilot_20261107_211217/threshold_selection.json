@@ -1,0 +1,29 @@
+{
+  "run_id": "pilot_20261107_211217",
+  "feature_schema_version": 2,
+  "threshold": 0.4741064757,
+  "prediction_rule": "score > threshold",
+  "selection_method": "maximize pooled validation F1 with pooled FPR <= 0.05; ties choose highest candidate threshold",
+  "candidate_thresholds": "midpoints between distinct validation scores, plus extreme all-positive and all-negative thresholds",
+  "uses_validation_labels": true,
+  "training_seeds_benign": [101, 102, 103],
+  "benign_calibration_seed": 104,
+  "validation_seeds_attack": [1, 2, 3],
+  "test_seeds_attack": [4, 5, 6],
+  "validation_confusion": {"TP": 26, "TN": 263, "FP": 7, "FN": 4},
+  "validation_f1": 0.8253968253968254,
+  "validation_fpr": 0.025925925925925925,
+  "model_sha256": "1cb24041e96aec2bf5d494b087080ce4cc689fca0c80c730c09ea077a28084f7",
+  "scaler_sha256": "e8ebf0f5ed41e35cd782ddd201cf27fa5082001a55b7d46dc7b8126dc27f1fff",
+  "validation_prediction_sha256": {
+    "1": "bbee8096780cbec436dace190488b6e8f91a79fc2547a1165c7f7e3d2323f7a4",
+    "2": "54541ccafe7b6a0359b4cc79983a0eb8f00099784a65cc1163a947234ddeeb14",
+    "3": "d2a334014da90fd43375d1fa264236a65f0c4a66853eb680bfbeb97c49935a64"
+  },
+  "validation_scenario_sha256": {
+    "1": "76c1d599ff158e5ada4493b5fa2080a4c027457877385986f2f4442d1a6dbf36",
+    "2": "4476e9c46c698dbfe6c9318a85383681c291f9fafc19afff0fb2f8d9df33bf7b",
+    "3": "0d23ec1d8fa7cd1a17fdb8a14aa537433a752a0efa2803be10e1f725f9a5b549"
+  },
+  "test_status": "not_run"
+}

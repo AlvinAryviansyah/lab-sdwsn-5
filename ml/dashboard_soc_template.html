@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HieMulti-Block | Research Console</title>
+<style>
+:root{color-scheme:dark;--bg:#08111c;--side:#0b1521;--panel:#101d2a;--panel2:#142431;--line:#213747;--ink:#e7f2f3;--muted:#89a1aa;--teal:#4ed9c1;--cyan:#62c7e5;--red:#f07876;--amber:#e8bc69;--green:#73d2a5}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 "Avenir Next","Segoe UI",sans-serif;letter-spacing:0}button,select{font:inherit}button{cursor:pointer}button:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--teal);outline-offset:3px}button,select{color:inherit}a{color:var(--cyan)}
+.app{min-height:100vh;display:grid;grid-template-columns:224px minmax(0,1fr)}.sidebar{background:var(--side);border-right:1px solid var(--line);padding:24px 16px;display:flex;flex-direction:column;gap:32px}.brand{display:flex;align-items:center;gap:10px;padding:0 6px}.brand-mark{display:grid;place-items:center;width:37px;height:37px;border:1px solid #347a76;color:var(--teal);font-weight:800;font-size:16px;border-radius:6px;background:#102d32}.brand strong{display:block;font-size:14px}.brand small{display:block;color:var(--muted);font-size:10px;text-transform:uppercase}.nav-label,.eyebrow{font-size:10px;font-weight:700;text-transform:uppercase;color:var(--muted)}.nav-label{padding:0 10px 8px}.nav{display:grid;gap:4px}.nav button{background:transparent;border:0;text-align:left;color:#9eb3bd;padding:11px 12px;border-radius:5px;font-weight:600}.nav button.active{background:#14343b;color:var(--teal);box-shadow:inset 3px 0 var(--teal)}.nav button:hover{background:#152a36}.side-bottom{margin-top:auto;border-top:1px solid var(--line);padding:16px 8px;color:var(--muted);font-size:11px}.side-bottom strong{display:block;color:#b8cbd0;font-size:12px;margin-bottom:4px}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--teal);margin-right:6px}
+.workspace{min-width:0}.topbar{min-height:72px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:15px;padding:14px 28px;background:#0b1722}.top-title{font-size:12px;font-weight:700;color:#c4d6db}.top-sub{color:var(--muted);font-size:11px}.snapshot{font-size:11px;color:var(--teal);border:1px solid #28534f;background:#102d30;padding:5px 9px;border-radius:4px;white-space:nowrap}.filters{display:flex;align-items:end;gap:12px;padding:16px 28px;border-bottom:1px solid var(--line);background:#0d1925;flex-wrap:wrap}.filter{display:grid;gap:5px;min-width:124px}.filter.model{min-width:270px;flex:1;max-width:380px}.filter label{font-size:10px;text-transform:uppercase;font-weight:700;color:var(--muted)}select{height:36px;padding:0 32px 0 10px;border:1px solid #2a4351;border-radius:4px;background:#122330;min-width:0}.filter-note{margin-left:auto;color:var(--muted);font-size:11px;max-width:240px}.content{max-width:1600px;margin:auto;padding:28px}.page-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:22px}.page-head h1{font-size:24px;line-height:1.2;margin:5px 0;color:#f0f8f8}.page-head p{margin:6px 0 0;color:var(--muted);font-size:12px}.scenario-tag{color:var(--teal);font-size:11px;border:1px solid #2a5754;border-radius:4px;padding:5px 8px;white-space:nowrap}.hidden{display:none!important}.section-title{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:24px 0 11px}.section-title h2{margin:0;font-size:14px;font-weight:700}.section-title span,.subtle{font-size:11px;color:var(--muted)}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.kpi{min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:15px 16px;min-height:96px}.kpi-label{color:var(--muted);font-size:11px;font-weight:600}.kpi-value{font-size:25px;line-height:1.15;font-weight:700;margin-top:8px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.kpi-unit{font-size:12px;color:var(--muted);margin-left:4px;font-weight:500}.kpi-sub{color:#77919c;font-size:10px;margin-top:6px}.kpi.accent .kpi-value{color:var(--teal)}.panel{background:var(--panel);border:1px solid var(--line);border-radius:5px;min-width:0}.panel-head{padding:15px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}.panel-head h2,.panel-head h3{margin:0;font-size:13px}.panel-head span{font-size:10px;color:var(--muted)}.panel-body{padding:17px 18px}.cols{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,.8fr);gap:12px}.cols-even{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.stack{display:grid;gap:12px;align-content:start}.empty{color:var(--muted);font-size:12px;padding:24px 0;text-align:center}.na{color:#8399a2;font-size:12px;font-weight:500}.source{font-size:10px;color:#78919b;overflow-wrap:anywhere;margin-top:12px}.source strong{color:#a6bbc1}.badge{display:inline-block;font-size:10px;padding:3px 7px;border-radius:3px;border:1px solid #31515b;color:#b8cdd0;background:#152b34}.badge.good{color:var(--teal);border-color:#346a62}.badge.bad{color:#ffaaa4;border-color:#80514e}.badge.warn{color:#efcc8d;border-color:#765f3d}.rule{height:1px;background:var(--line);margin:16px 0}
+.arch{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.arch-item{border:1px solid #27414d;background:#112530;border-radius:4px;padding:14px;min-height:110px}.arch-num{color:var(--teal);font-size:10px;font-weight:700}.arch-item strong{display:block;font-size:13px;margin:8px 0 5px}.arch-item p{margin:0;color:var(--muted);font-size:11px}.architecture-note{margin-top:13px;padding:9px 11px;border-left:2px solid var(--amber);background:#28291e;color:#dbcba7;font-size:11px}.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px}.fact{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid #203443;font-size:12px}.fact span:first-child{color:var(--muted)}.fact span:last-child{text-align:right;font-weight:600;overflow-wrap:anywhere}.status-list{display:grid;gap:0}.status-row{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #203443;font-size:12px}.status-row span:first-child{color:#bdced1}
+.map-shell{background:#0b1822;position:relative;overflow:hidden}.map-shell svg{width:100%;height:auto;max-height:620px;display:block}.map-node{cursor:pointer}.map-node:hover .core{stroke:#fff;stroke-width:3}.map-label{font-size:12px;fill:#9eb4bd;pointer-events:none}.map-legend{display:flex;gap:14px;flex-wrap:wrap;padding:12px 16px;color:#a6bbc1;font-size:10px}.legend-item{display:flex;align-items:center;gap:6px}.swatch{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--teal)}.swatch.mal{background:var(--red)}.swatch.neighbor{background:transparent;border:2px solid var(--amber);width:11px;height:11px}.swatch.sink{background:var(--cyan);border-radius:1px}.swatch.path{width:16px;height:3px;background:var(--amber);border-radius:0}.detail-title{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.detail-title strong{font-size:19px}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}.detail-item{padding:10px 0;border-bottom:1px solid #213746;min-width:0}.detail-item .label{font-size:10px;color:var(--muted)}.detail-item .value{font-size:13px;font-weight:600;overflow-wrap:anywhere;margin-top:2px}.path-line{display:flex;flex-wrap:wrap;gap:5px;align-items:center}.path-node{font-size:11px;padding:4px 6px;border:1px solid #355461;border-radius:3px;color:#cbe1e3}.path-node.selected{border-color:var(--teal);color:var(--teal)}.path-node.mal{border-color:#80514e;color:var(--red)}.path-arrow{color:#6b8994}.table-wrap{overflow:auto;max-height:420px}table{border-collapse:collapse;width:100%;font-size:11px;text-align:left}th,td{padding:9px 10px;border-bottom:1px solid #203443;white-space:nowrap}th{position:sticky;top:0;background:#152633;color:var(--muted);font-size:10px;text-transform:uppercase}td.number,th.number{text-align:right;font-variant-numeric:tabular-nums}tr.selectable{cursor:pointer}tr.selectable:hover,tr.selected{background:#173641}.matrix{display:grid;grid-template-columns:82px 1fr 1fr;gap:5px;align-items:stretch}.matrix .axis{color:var(--muted);font-size:10px;text-align:center;padding:8px 3px}.matrix .cell{text-align:center;background:#173940;border:1px solid #28534e;padding:12px 6px;border-radius:4px}.matrix .cell.error{background:#392829;border-color:#63443f}.matrix .cell strong{display:block;font-size:22px;line-height:1.2}.matrix .cell span{font-size:10px;color:#a6babc}.chart svg{display:block;width:100%;height:220px}.chart text{font-family:inherit}.chart-note{font-size:10px;color:var(--muted);margin-top:6px}.compare-row{display:grid;grid-template-columns:60px 1fr 48px;align-items:center;gap:8px;margin:11px 0;font-size:11px}.track{height:8px;background:#233946;border-radius:2px;overflow:hidden}.fill{height:100%;background:var(--teal)}.fill.alt{background:var(--cyan)}.footer{padding:20px 28px;border-top:1px solid var(--line);color:#78919b;font-size:10px}
+@media(max-width:1050px){.app{grid-template-columns:1fr}.sidebar{padding:12px 18px;gap:12px;border-right:0;border-bottom:1px solid var(--line)}.sidebar .nav{display:flex;overflow:auto}.nav-label,.side-bottom{display:none}.nav button{white-space:nowrap}.topbar{min-height:56px}.cols{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.content{padding:20px 15px}.topbar,.filters{padding-left:15px;padding-right:15px}.filter{min-width:calc(50% - 6px);flex:1}.filter.model{min-width:100%;max-width:none}.filter-note{margin-left:0;max-width:none}.page-head{align-items:start;flex-direction:column}.page-head h1{font-size:21px}.arch,.cols-even{grid-template-columns:1fr}.arch-item{min-height:0}.kpis{gap:7px}.kpi{padding:12px;min-height:88px}.kpi-value{font-size:20px}.facts{grid-template-columns:1fr}.panel-body{padding:14px}.map-label{font-size:13px}.matrix{grid-template-columns:65px 1fr 1fr}}
+@media(max-width:640px){.sidebar .nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));overflow:visible}.nav button{white-space:normal;text-align:center;padding:8px 4px;font-size:11px;line-height:1.25;min-height:42px}}
+.arch{grid-template-columns:minmax(0,1fr) 16px minmax(0,1fr) 16px minmax(0,1fr) 16px minmax(0,1fr)}.arch-arrow{align-self:center;text-align:center;color:var(--teal);font-size:16px}
+@media(max-width:640px){.arch{grid-template-columns:1fr}.arch-arrow{transform:rotate(90deg);height:18px;line-height:18px}}
+</style>
+</head>
+<body>
+<div class="app">
+ <aside class="sidebar">
+  <div class="brand"><div class="brand-mark">H</div><div><strong>HieMulti-Block</strong><small>Research Console</small></div></div>
+  <div><div class="nav-label">Workspace</div><nav class="nav" aria-label="Dashboard pages">
+   <button type="button" data-page="overview" class="active">01 &nbsp; Overview</button>
+   <button type="button" data-page="routing">02 &nbsp; TLDQN Monitoring</button>
+  <button type="button" data-page="detection">03 &nbsp; Route adaptation</button>
+  <button type="button" data-page="comparison">04 &nbsp; Mode comparison</button>
+  </nav></div>
+  <div class="side-bottom"><strong><span class="dot"></span>Research snapshot</strong><div>Recorded scenarios from repository artifacts</div><div id="side-meta"></div></div>
+ </aside>
+ <div class="workspace">
+  <header class="topbar"><div><div class="top-title">NETWORK INTELLIGENCE / HIE-MULTI-BLOCK</div><div class="top-sub">NS-3 simulation research workspace</div></div><div class="snapshot">RECORDED DATA</div></header>
+  <div class="filters" aria-label="Global scenario filters">
+   <div class="filter"><label for="node-count">Sensor nodes</label><select id="node-count"></select></div>
+   <div class="filter"><label for="seed">Scenario seed</label><select id="seed"></select></div>
+  <div class="filter model"><label for="configuration">Mode eksperimen</label><select id="configuration"></select></div>
+   <div class="filter-note" id="filter-note"></div>
+  </div>
+  <main class="content">
+    <div id="loading" role="status">Loading recorded scenarios...</div>
+    <noscript><div role="alert">JavaScript is required to display the dashboard.</div></noscript>
+   <div id="error" class="hidden" role="alert"></div>
+   <section id="overview" class="page">
+    <div class="page-head"><div><div class="eyebrow">Research overview</div><h1>Simulation overview</h1><p>Recorded network and detection results for the selected scenario.</p></div><div class="scenario-tag" id="overview-tag"></div></div>
+    <div class="kpis" id="overview-kpis"></div>
+    <div class="section-title"><h2>System architecture &amp; integration</h2><span>Recorded pipeline</span></div>
+    <div><div class="arch">
+    <div class="arch-item"><div class="arch-num">01 / BOOTSTRAP</div><strong>TLDQN model</strong><p>Frozen policy selects initial routes before sensor traffic starts.</p></div>
+     <span class="arch-arrow" aria-hidden="true">→</span>
+     <div class="arch-item"><div class="arch-num">02 / SIMULATION</div><strong>NS-3 network</strong><p>Applies routing and records radio, IP, energy and watchdog traces.</p></div>
+     <span class="arch-arrow" aria-hidden="true">→</span>
+    <div class="arch-item"><div class="arch-num">03 / LIVE STATE</div><strong>NS-3 telemetry</strong><p>At the checkpoint, link ACK ratios, watchdog trust and remaining energy are observed.</p></div>
+     <span class="arch-arrow" aria-hidden="true">→</span>
+    <div class="arch-item"><div class="arch-num">04 / UPDATE</div><strong>TLDQN reroute</strong><p>Gym returns a route batch for continuing flows; IDS actions are disabled.</p></div>
+    </div><div class="architecture-note" id="arch-note"></div></div>
+    <div class="section-title"><h2>Scenario configuration</h2><span>Artifact-backed</span></div>
+    <div class="cols-even"><div class="panel"><div class="panel-head"><h3>Simulation parameters</h3><span>NS-3</span></div><div class="panel-body"><div class="facts" id="overview-facts"></div></div></div>
+    <div class="panel"><div class="panel-head"><h3>Execution status</h3><span>not live</span></div><div class="panel-body"><div class="status-list" id="overview-status"></div></div></div></div>
+   </section>
+   <section id="routing" class="page hidden">
+    <div class="page-head"><div><div class="eyebrow">Network operations</div><h1>TLDQN monitoring</h1><p>Routing and sensor observations for one recorded simulation.</p></div><div class="scenario-tag" id="routing-tag"></div></div>
+    <div class="kpis" id="network-kpis"></div>
+    <div class="section-title"><h2>Honeycomb network</h2><span>Actual sensor coordinates and exported next-hop tables</span></div>
+    <div class="cols"><div class="panel"><div class="panel-head"><h3>Network topology</h3><span id="map-caption"></span></div><div class="map-shell"><svg id="topology" viewBox="0 0 1000 800" role="group" aria-label="Interactive sensor topology"></svg></div>
+    <div class="map-legend"><span class="legend-item"><i class="swatch"></i>Normal (ground truth)</span><span class="legend-item"><i class="swatch mal"></i>Malicious (ground truth)</span><span class="legend-item"><i class="swatch" style="background:#8297a4"></i>Ground truth unavailable</span><span class="legend-item"><i class="swatch neighbor"></i>Within radio range</span><span class="legend-item"><i class="swatch" style="background:transparent;border:2px solid white;width:11px;height:11px"></i>Selected / isolated</span><span class="legend-item"><i class="swatch sink"></i>Destination sink</span><span class="legend-item"><i class="swatch path"></i>Selected route</span></div></div>
+     <div class="stack"><div class="panel"><div class="panel-head"><h3>Selected sensor</h3><span>NS-3 telemetry</span></div><div class="panel-body" id="route-detail"></div></div>
+     <div class="panel"><div class="panel-head"><h3>Routing path</h3><span>Next-hop table</span></div><div class="panel-body" id="path-detail"></div></div></div>
+    </div>
+   </section>
+   <section id="detection" class="page hidden">
+    <div class="page-head"><div><div class="eyebrow">Adaptive routing</div><h1>TLDQN route audit</h1><p>Live telemetry checkpoint and next-hop changes for the selected run.</p></div><div class="scenario-tag" id="detection-tag"></div></div>
+    <div class="kpis" id="detection-kpis"></div>
+    <div class="section-title"><h2>Route changes</h2><span id="detection-scope"></span></div>
+    <div class="cols-even"><div class="panel"><div class="panel-head"><h3>Changed next-hops</h3><span>Post-checkpoint action</span></div><div class="table-wrap" id="decision-table"></div></div>
+    <div class="panel"><div class="panel-head"><h3>Telemetry used</h3><span>Checkpoint t=8.3 s</span></div><div class="panel-body" id="detection-detail"></div></div></div>
+   </section>
+    <section id="comparison" class="page hidden">
+     <div class="page-head"><div><div class="eyebrow">Paired experiment</div><h1>Three-mode comparison</h1><p>Same scenario seeds: CSV baseline, live adaptive Gym, and live Gym with Hybrid F2.</p></div><div class="scenario-tag">100 NODES · SEEDS 4-6</div></div>
+     <div class="architecture-note">Hybrid F2 is paired against the live-adaptive no-IDS run A. It isolates DTO-positive sensors, records Bi-GAN alarms, and asks Gym for a live route batch after isolation. Missing run artifacts stay marked pending.</div>
+     <div class="section-title"><h2>Network and IDS outcomes</h2><span>Per-seed recorded results</span></div>
+     <div class="panel"><div class="table-wrap" id="mode-comparison"><table><thead><tr><th>Mode</th><th class="number">Seed</th><th>Validation</th><th class="number">PDR</th><th class="number">&Delta; PDR vs adaptive</th><th class="number">Benign PDR</th><th class="number">Throughput (kbps)</th><th class="number">Latency (ms)</th><th>Actions</th></tr></thead><tbody id="mode-comparison-rows"></tbody></table></div></div>
+     <div class="section-title"><h2>Interpretation</h2><span>Validation gates</span></div>
+     <div class="facts">
+      <div class="fact"><span>Baseline</span><span>Same-build CSV route control, no IDS action.</span></div>
+      <div class="fact"><span>Adaptive</span><span>TLDQN live Gym reroute, no IDS action.</span></div>
+      <div class="fact"><span>Adaptive + F2</span><span>DTO isolates; Bi-GAN is alarm-only; Gym reroutes from live telemetry.</span></div>
+      <div class="fact"><span>F2 replay gate</span><span>Requires identical pre-action observations and applied route counters.</span></div>
+     </div>
+    </section>
+  </main>
+  <footer class="footer" id="footer"></footer>
+ </div>
+</div>
+<script>
+"use strict";
+const D=__DATA__;
+const $=id=>document.getElementById(id);
+const state={page:"overview",config:null,n:null,seed:null,node:0};
+const missing='<span class="na">N/A</span>';
+const finite=x=>x!==null&&x!==undefined&&Number.isFinite(Number(x));
+const fmt=(x,d=1)=>finite(x)?Number(x).toLocaleString("en-US",{maximumFractionDigits:d,minimumFractionDigits:d}):null;
+const value=(x,d=1,unit="")=>finite(x)?`${fmt(x,d)}${unit?`<span class="kpi-unit">${unit}</span>`:""}`:missing;
+const esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const current=()=>D.runs[state.config]?.[`${state.n}_${state.seed}`]||null;
+const config=()=>D.configs[state.config]||{};
+const hasPilot=()=>config().stage==="pilot";
+const isBaseline=()=>config().stage==="baseline";
+const telemetryBigan=()=>config().detection_source==="NS-3 telemetry Bi-GAN";
+const statusClass=bad=>bad?"bad":"good";
+const actualLabel=(run,id)=>run.gt?.[id]===1?'Malicious':run.gt?.[id]===0?'Normal':null;
+const sensorName=id=>id>=state.n?`Sink ${id-state.n}`:`S${id}`;
+function kpi(label,v,unit,sub,accent=false,d=1){return `<div class="kpi${accent?" accent":""}"><div class="kpi-label">${esc(label)}</div><div class="kpi-value">${value(v,d,unit)}</div><div class="kpi-sub">${esc(sub||"")}</div></div>`;}
+function fact(label,v){return `<div class="fact"><span>${esc(label)}</span><span>${v??missing}</span></div>`;}
+function detail(label,v){return `<div class="detail-item"><div class="label">${esc(label)}</div><div class="value">${v??missing}</div></div>`;}
+function number(v,d=0,unit=""){return finite(v)?`${fmt(v,d)}${unit?` ${esc(unit)}`:""}`:missing;}
+function chooseOptions(){
+ // Tiga mode selalu tampil; mode tanpa artefak run dinonaktifkan (tidak ada metrik rekaan).
+ const all=(D.active_configs||[]).filter(key=>D.configs[key]);
+ const ids=all.filter(key=>Object.keys(D.runs[key]||{}).length);
+ $("configuration").innerHTML=all.map(id=>ids.includes(id)?`<option value="${esc(id)}">${esc(D.configs[id].label)}</option>`:`<option value="${esc(id)}" disabled>${esc(D.configs[id].label)} — belum dijalankan</option>`).join("");
+ if(ids.length<2)throw new Error("Paired same-build CSV control and TLDQN live-adaptive runs are required.");
+ state.config=ids[0]; syncFilters();
+}
+function syncFilters(){
+ const keys=Object.keys(D.runs[state.config]||{}).map(k=>k.split("_").map(Number));
+ const nodes=[...new Set(keys.map(k=>k[0]))].sort((a,b)=>a-b);
+ if(!nodes.includes(state.n))state.n=nodes.includes(100)?100:nodes[0];
+ const seeds=[...new Set(keys.filter(k=>k[0]===state.n).map(k=>k[1]))].sort((a,b)=>a-b);
+ if(!seeds.includes(state.seed))state.seed=seeds[0];
+ if(state.node>=state.n)state.node=0;
+ $("configuration").value=state.config;
+ $("node-count").innerHTML=nodes.map(n=>`<option value="${n}">${n} nodes</option>`).join("");$("node-count").value=state.n;
+ $("seed").innerHTML=seeds.map(s=>`<option value="${s}">Seed ${s}</option>`).join("");$("seed").value=state.seed;
+}
+function renderOverview(r,c){
+ const gt=r.gt, malicious=gt?gt.reduce((a,b)=>a+Number(b),0):null;
+ $("overview-kpis").innerHTML=kpi("Sensor nodes",state.n,"","Selected network",true,0)+kpi("Normal nodes",malicious===null?null:state.n-malicious,"","Scenario ground truth",false,0)+kpi("Malicious nodes",malicious,"","Scenario ground truth",false,0)+kpi("Delivery ratio",r.m.pdr_percent,"%","NS-3 FlowMonitor",false,2);
+ $("arch-note").textContent=c.fusion==="F2"?"Initial routes bootstrap from the frozen policy. At t=8.3 s, DTO-positive sensors are isolated, Bi-GAN alarms are recorded, and TLDQN replans from measured NS-3 telemetry.":c.route_transport==="ns3-gym-live"?"Initial routes bootstrap from the frozen policy. At t=8.3 s, TLDQN replans continuing flows from measured NS-3 telemetry; IDS actions are disabled. Unmeasured links fall back to the baseline proxy.":"Same-build CSV route control: routes are loaded from the precomputed TLDQN table and no adaptive Gym reroute is requested.";
+ $("overview-facts").innerHTML=fact("Node count",number(state.n))+fact("Seed",number(state.seed))+fact("Simulation duration",number(c.duration||600,0,"s"))+fact("Radio range",number(r.m.max_range_m,0,"m"))+fact("Routing policy",esc(c.policy))+fact("Trust source",esc(c.trust))+fact("IDS mode",isBaseline()?"No IDS (run A)":hasPilot()?"Bi-GAN alarm only":c.stage==="hybrid"?"Hybrid decision file":"C++ / legacy")+fact("Network output",esc(r.metrics_source||c.source));
+ const timing=D.ai_timing?.[String(state.n)];if(timing&&!telemetryBigan()&&!isBaseline())$("overview-facts").innerHTML+=fact("Legacy Bi-GAN Python timing",number(timing.bigan,4,"ms / decision"));
+ const dto=isBaseline()||hasPilot()?"Not applied":c.stage==="hybrid"?"Recorded decisions":"Recorded metrics";
+ $("overview-status").innerHTML=[['Simulation','Output available'],['TLDQN',r.paths?'Routing table available':'N/A'],['Bi-GAN',isBaseline()?'Not applied':r.det?'Predictions available':'N/A'],['DTO',dto],['Live execution','Not connected']].map(([a,b])=>`<div class="status-row"><span>${esc(a)}</span><span class="badge${b==='N/A'?'':' good'}">${esc(b)}</span></div>`).join('');
+ if(r.same_build_parity){const gate=r.replay_verified===true?'Passed':'Failed';const adaptive=r.same_build_parity.live_action_gate;const detail=c.route_transport==="ns3-gym-live"&&adaptive?`; changed routes ${adaptive.changed_route_entries}; measured links ${adaptive.measured_links}`:'';$("overview-status").innerHTML+=`<div class="status-row"><span>Paired validation</span><span class="badge ${r.replay_verified===true?'good':'warn'}">${gate}${detail}</span></div>`;}
+}
+function drawTopology(r){
+ const svg=$("topology"),n=state.n,gt=r.gt||[],path=r.paths?.[state.node]||[],positions=D.sensors.slice(0,n).concat(D.sinks);
+ const x=id=>(positions[id][0]-60)*1.12,y=id=>(positions[id][1]-100)*1.12;
+ const source=positions[state.node],radioRange=finite(r.m.max_range_m)&&Number(r.m.max_range_m)>0?Number(r.m.max_range_m):null;const neighbors=new Set(radioRange===null?[]:D.sensors.slice(0,n).map((p,id)=>({id,d:Math.hypot(p[0]-source[0],p[1]-source[1])})).filter(v=>v.id!==state.node&&v.d<=radioRange+1e-6).map(v=>v.id));
+ let html='<defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1c303c" stroke-width="1"/></pattern><marker id="route-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#e8bc69"/></marker></defs><rect width="1000" height="800" fill="url(#grid)"/>';
+ const edges=new Set();(r.paths||[]).forEach(p=>p.slice(1).forEach((b,i)=>{const a=p[i],key=`${a}-${b}`;if(!edges.has(key)&&positions[a]&&positions[b]){edges.add(key);html+=`<line x1="${x(a)}" y1="${y(a)}" x2="${x(b)}" y2="${y(b)}" stroke="#315460" stroke-width="1.5" opacity=".55"/>`;}}));
+ path.slice(1).forEach((b,i)=>{const a=path[i];if(positions[a]&&positions[b])html+=`<line x1="${x(a)}" y1="${y(a)}" x2="${x(b)}" y2="${y(b)}" stroke="#e8bc69" stroke-width="4" marker-end="url(#route-arrow)"/>`;});
+ D.sinks.forEach((p,i)=>{const id=n+i;html+=`<g><rect x="${x(id)-10}" y="${y(id)-10}" width="20" height="20" rx="2" fill="#62c7e5" stroke="#09202b" stroke-width="2"/><text class="map-label" x="${x(id)+14}" y="${y(id)-10}" fill="#62c7e5">Sink ${i}</text><title>Edge sink ${i}</title></g>`;});
+ D.sensors.slice(0,n).forEach((p,id)=>{const label=actualLabel(r,id),bad=label==='Malicious',selected=id===state.node,blocked=(r.blocked||[]).includes(id);html+=`<g class="map-node" data-node="${id}" tabindex="0" role="button" aria-label="Sensor ${id}${label?', '+label.toLowerCase()+' ground truth':', ground truth unavailable'}"><circle cx="${x(id)}" cy="${y(id)}" r="${selected?14:neighbors.has(id)?12:9}" fill="none" stroke="${selected?'#fff':neighbors.has(id)?'#e8bc69':'transparent'}" stroke-width="2"/><circle class="core" cx="${x(id)}" cy="${y(id)}" r="8" fill="${label===null?'#8297a4':bad?'#f07876':'#4ed9c1'}" stroke="${blocked?'#fff':'#10202a'}" stroke-width="${blocked?3:2}"/><text class="map-label" x="${x(id)+11}" y="${y(id)+4}">${id}</text><title>Sensor ${id}${label?' · '+label.toLowerCase()+' (ground truth)':' · ground truth unavailable'}${blocked?' · isolated':''}</title></g>`;});
+ svg.innerHTML=html;$("map-caption").textContent=`${n} sensors · seed ${state.seed}`;
+ return radioRange===null?null:[...neighbors].sort((a,b)=>a-b);
+}
+function trustFor(r){const c=config(),key=`${state.n}_${state.seed}`;if(c.trust==="uniform")return [0.5,"Uniform routing input"];if(c.trust==="telemetry"&&D.trust[key])return [D.trust[key][state.node]?.[0],"Stage 1 telemetry routing input"];if(c.trust==="gt"&&D.trust_sim?.[key])return [D.trust_sim[key][state.node],"Simulated from ground truth"];if(c.trust==="live")return [null,"Watchdog trust was consumed by the phase-1 TLDQN reroute; per-node trust is not included in the dashboard payload."];return [null,"Not available"]}
+function renderRouting(r){
+ const m=r.m;
+ $("network-kpis").innerHTML=kpi("Packet delivery ratio",m.pdr_percent,"%","FlowMonitor UDP",true,2)+kpi("Packet drop ratio",m.packet_drop_ratio_percent,"%","FlowMonitor UDP",false,2)+kpi("Throughput",m.throughput_kbps,"kbps","Network aggregate",false,2)+kpi("End-to-end latency",m.latency_ms,"ms","Average received packet",false,3)+kpi("Energy consumption",m.energy_consumption_J,"J","All sensors",false,2)+kpi("Network lifetime",m.network_lifetime_s,"s","Projected, not measured death",false,0)+kpi("Control overhead",m.control_overhead_mps,"msg/s","Logical messages",false,2)+kpi("Computation overhead",m.computation_overhead_percent,"%","NS-3 reported proxy",false,2);
+ const neighbors=drawTopology(r),id=state.node,node=r.tel?.node,read=key=>node?.[key]?.[id],dropNames=["ttl","no_route","bad_checksum","iface_down","route_error","frag_timeout","duplicate","other"],drops=dropNames.map(name=>read("self_ip_drop_"+name));
+ const dropTotal=drops.every(finite)?drops.reduce((a,b)=>a+Number(b),0):null;
+ const path=r.paths?.[id]||[],next=path.length>1?sensorName(path[1]):null,[trust,trustNote]=trustFor(r),label=actualLabel(r,id),bad=label==='Malicious',blocked=(r.blocked||[]).includes(id);
+ $("route-detail").innerHTML=`<div class="detail-title"><strong>Sensor ${id}</strong><span class="badge ${label?statusClass(bad):''}">${label||'N/A'} · ground truth</span>${blocked?'<span class="badge warn">Isolated</span>':''}</div><div class="detail-grid">${detail("Node type","Sensor")}${detail("Neighbor sensors",neighbors===null?missing:neighbors.length?neighbors.map(x=>`S${x}`).join(', '):"None within range")}${detail("Packets originated",number(read("self_ip_orig_pkts")))}${detail("IP received",number(read("self_ip_rx_pkts")))}${detail("IP forwarded",number(read("self_ip_fwd_pkts")))}${detail("IP drop events",number(dropTotal))}${detail("Packet drop ratio",missing)}${detail("Energy consumption",number(read("self_energy_j"),4,"J"))}${detail("Trust score",number(trust,3))}${detail("Selected next hop",next?esc(next):missing)}</div><div class="source">${esc(trustNote)}. Neighbors are computed geometrically from the recorded radio range, not measured link guarantees. IP drop events exclude unobserved drops; per-node PDR is not exported.</div>${r.tel?.source?`<div class="source"><strong>Telemetry:</strong> ${esc(r.tel.source)}</div>`:''}`;
+ const reaches=path.length>1&&path[path.length-1]>=state.n;
+ $("path-detail").innerHTML=path.length?`<div class="path-line">${path.map((v,i)=>`${i?'<span class="path-arrow">→</span>':''}<span class="path-node ${i===0?'selected':v<state.n&&r.gt?.[v]?'mal':''}">${esc(sensorName(v))}</span>`).join('')}</div><div class="source">${reaches?'Route reaches destination sink.':'Route is unavailable.'} Path source: ${config().route_transport==='ns3-gym-live'?'TLDQN action after live checkpoint':'same-build CSV route control'}.</div>`:`<div class="empty">Route data not available.</div>`;
+}
+function renderRouteAudit(r,c){
+ const live=c.route_transport==="ns3-gym-live",state=r.live_state,changes=r.live_route_changes||[];
+ const hybrid=c.fusion==="F2";
+ const measured=live?state?.measured_links:null,fallback=live?state?.proxy_fallback_links:null;
+ $("detection-scope").textContent=hybrid?"F2 checkpoint · DTO isolation, Bi-GAN alarm, live Gym reroute":live?"Live checkpoint at t=8.3 s · batch route update":"CSV control · static routes, no live Gym request";
+ $("detection-kpis").innerHTML=hybrid?
+  kpi("Isolated nodes",r.m.nodes_blocked,"","DTO-positive · F2",true,0)+kpi("Bi-GAN alarms",r.m.bigan_alarms,"","Alarm only",false,0)+kpi("Live links measured",measured,"","At the checkpoint",false,0)+kpi("Gym reroute changes",r.m.reroute_changed,"entries","F2 isolation applied first",false,0):
+  kpi("Changed next-hops",live?changes.length:0,"","NS-3 applied route table",true,0)+kpi("Measured links",measured,"","MAC ACK / attempt observations",false,0)+kpi("Proxy fallback links",fallback,"","No live sample at checkpoint",false,0)+kpi("Inference time",r.live_inference_ms,"ms","Python wall-clock",false,3);
+ $("decision-table").innerHTML=live?(changes.length?`<table><thead><tr><th>Sensor</th><th>Sink</th><th>Before</th><th>After</th></tr></thead><tbody>${changes.map(row=>`<tr><td>S${row.node}</td><td>${row.sink}</td><td>${esc(row.before)}</td><td>${esc(row.after)}</td></tr>`).join("")}</tbody></table>`:'<div class="empty">TLDQN used the live checkpoint, but selected the same next-hops as before.</div>'):'<div class="empty">CSV control loads its route table before traffic and does not request adaptive Gym actions.</div>';
+ $("detection-detail").innerHTML=hybrid?`<div class="detail-grid">${detail("Decision point","t = 8.3 s")}${detail("F2 replay gate",r.replay_verified===true?"Passed":r.replay_verified===false?"Failed":"Pending")}${detail("Live links measured",number(measured))}${detail("Proxy fallback",number(fallback))}${detail("DTO isolated nodes",number(r.m.isolated_by_dto))}${detail("Bi-GAN-only isolation",number(r.m.isolated_by_bigan_only))}${detail("Failed entries",number(r.f2_gate?.failed_entries))}${detail("Unresolved route entries",number(r.m.reroute_unresolved))}</div><div class="source">Run A telemetry generated F2 decisions; Run B applied isolation before the live Gym reroute. Bi-GAN alarms do not isolate under F2.</div>`:
+  live?`<div class="detail-grid">${detail("Decision point","t = 8.3 s")}${detail("Live links measured",number(measured))}${detail("Proxy fallback",number(fallback))}${detail("Isolated nodes",number(0))}</div><div class="source">Live inputs: measured MAC delivery ratio, watchdog-derived trust and remaining energy. Edges with no observations retain the topology/seed proxy. This is one adaptive batch, not per-packet routing.</div>`:'<div class="empty">No live telemetry action in the CSV control.</div>';
+}
+function renderModeComparison(){
+ const modes=D.active_configs||[],hybridKey="tldqn_ns3gym_adaptive_f2",adaptiveKey="tldqn_ns3gym_adaptive";
+ const rows=[];
+ for(const seed of D.seeds||[]){
+  for(const key of modes){
+   const run=D.runs[key]?.[`100_${seed}`],label=D.configs[key]?.label||key;
+   if(!run){rows.push(`<tr><td>${esc(label)}</td><td class="number">${seed}</td><td><span class="badge warn">Pending</span></td><td colspan="6">Run artifact has not been collected.</td></tr>`);continue;}
+   const m=run.m||{},adaptive=D.runs[adaptiveKey]?.[`100_${seed}`]?.m||{};
+   const status=key===hybridKey?(run.replay_verified===true?"F2 gate passed":run.replay_verified===false?"F2 gate failed":"Check pending"):
+     key===adaptiveKey?(run.replay_verified===true?"Adaptive gate passed":run.replay_verified===false?"Adaptive gate failed":"Recorded"):"Recorded control";
+   const statusClass=status.includes("passed")||status.includes("control")?"good":status.includes("failed")?"bad":"warn";
+   const delta=key===hybridKey&&finite(m.pdr_percent)&&finite(adaptive.pdr_percent)?fmt(Number(m.pdr_percent)-Number(adaptive.pdr_percent),2):"N/A";
+   const actions=key===hybridKey?`${number(m.nodes_blocked,0)} isolated · ${number(m.reroute_changed,0)} reroutes`:
+     key===adaptiveKey?`${(run.live_route_changes||[]).length} live route changes · no IDS`:"No IDS actions";
+   rows.push(`<tr><td>${esc(label)}</td><td class="number">${seed}</td><td><span class="badge ${statusClass}">${esc(status)}</span></td><td class="number">${number(m.pdr_percent,2)}%</td><td class="number">${delta}${delta!=="N/A"?" pp":""}</td><td class="number">${number(m.benign_pdr_percent,2)}%</td><td class="number">${number(m.throughput_kbps,2)}</td><td class="number">${number(m.latency_ms,3)}</td><td>${esc(actions)}</td></tr>`);
+  }
+ }
+ $("mode-comparison-rows").innerHTML=rows.length?rows.join(""):'<tr><td colspan="9">No comparison runs are available.</td></tr>';
+}
+function render(){
+ const r=current(),c=config();
+ if(!r){$("error").className="";$("error").textContent="Data not available for the selected scenario.";return;}
+ $("error").className="hidden";
+ // Pindah halaman DULU: panel yang gagal di-render tidak boleh mengunci navigasi.
+ document.querySelectorAll('.page').forEach(p=>p.classList.toggle('hidden',p.id!==state.page));
+ document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===state.page));
+ const tag=`${state.n} NODES / SEED ${state.seed}`;
+ ["overview-tag","routing-tag","detection-tag"].forEach(id=>$(id).textContent=tag);
+ $("filter-note").textContent=c.fusion==="F2"?"TLDQN live Gym + Hybrid F2":
+   c.route_transport==="ns3-gym-live"?"TLDQN + ns3-gym · live-adaptive, IDS off":"Baseline · same-build CSV";
+ const failed=[];
+ for(const [name,draw] of [["Overview",()=>renderOverview(r,c)],["TLDQN monitoring",()=>renderRouting(r)],
+     ["Route adaptation",()=>renderRouteAudit(r,c)],["Mode comparison",renderModeComparison]]){
+  try{draw()}catch(error){failed.push(`${name}: ${error.message}`);console.error(error)}
+ }
+ if(failed.length){$("error").className="";$("error").textContent=`Panel gagal dirender — ${failed.join(" · ")}`;}
+}
+$("configuration").addEventListener('change',e=>{state.config=e.target.value;syncFilters();render()});$("node-count").addEventListener('change',e=>{state.n=Number(e.target.value);syncFilters();render()});$("seed").addEventListener('change',e=>{state.seed=Number(e.target.value);render()});document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>{state.page=b.dataset.page;render()}));
+function selectSensor(event,selector){const target=event.target.closest(selector);if(!target)return;if(event.type==='keydown'&&!['Enter',' '].includes(event.key))return;event.preventDefault();state.node=Number(target.dataset.node??target.dataset.selectNode);render()}
+$("topology").addEventListener('click',e=>selectSensor(e,'[data-node]'));$("topology").addEventListener('keydown',e=>selectSensor(e,'[data-node]'));$("decision-table").addEventListener('click',e=>selectSensor(e,'[data-select-node]'));$("decision-table").addEventListener('keydown',e=>selectSensor(e,'[data-select-node]'));
+try{chooseOptions();$("side-meta").textContent=`Built ${D.meta.built_at}`;$("footer").textContent=`Snapshot ${D.meta.git} · ${D.meta.built_at} · Network values are recorded NS-3 outputs; offline model timing is not runtime telemetry.`;render()}catch(error){$("error").className="";$("error").textContent=`Unable to load dashboard: ${error.message}`;console.error(error)}finally{$("loading").className="hidden"}
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+{
+ "pass": true,
+ "scenarios": [
+  {
+   "n": 20,
+   "seed": 1,
+   "expected": {
+    "ids_mode": 1,
+    "nodes_blocked": 1,
+    "isolated_by_dto": 0,
+    "isolated_by_bigan_only": 1,
+    "bigan_alarms": 1,
+    "reroute_changed": 0
+   },
+   "cpp": {
+    "ids_mode": 1,
+    "nodes_blocked": 1,
+    "isolated_by_dto": 0,
+    "isolated_by_bigan_only": 1,
+    "bigan_alarms": 1,
+    "reroute_changed": 0
+   },
+   "log_ok": true,
+   "isolation_transit_drops": 0,
+   "reroute_unresolved": 1,
+   "pass": true
+  },
+  {
+   "n": 60,
+   "seed": 1,
+   "expected": {
+    "ids_mode": 1,
+    "nodes_blocked": 5,
+    "isolated_by_dto": 1,
+    "isolated_by_bigan_only": 4,
+    "bigan_alarms": 5,
+    "reroute_changed": 1
+   },
+   "cpp": {
+    "ids_mode": 1,
+    "nodes_blocked": 5,
+    "isolated_by_dto": 1,
+    "isolated_by_bigan_only": 4,
+    "bigan_alarms": 5,
+    "reroute_changed": 1
+   },
+   "log_ok": true,
+   "isolation_transit_drops": 0,
+   "reroute_unresolved": 0,
+   "pass": true
+  },
+  {
+   "n": 100,
+   "seed": 1,
+   "expected": {
+    "ids_mode": 1,
+    "nodes_blocked": 8,
+    "isolated_by_dto": 3,
+    "isolated_by_bigan_only": 5,
+    "bigan_alarms": 7,
+    "reroute_changed": 7
+   },
+   "cpp": {
+    "ids_mode": 1,
+    "nodes_blocked": 8,
+    "isolated_by_dto": 3,
+    "isolated_by_bigan_only": 5,
+    "bigan_alarms": 7,
+    "reroute_changed": 7
+   },
+   "log_ok": true,
+   "isolation_transit_drops": 0,
+   "reroute_unresolved": 0,
+   "pass": true
+  }
+ ]
+}

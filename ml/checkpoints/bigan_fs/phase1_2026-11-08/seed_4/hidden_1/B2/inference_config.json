@@ -1,0 +1,138 @@
+{
+ "format_version": 1,
+ "variant": "B2",
+ "seed": 4,
+ "n_hidden": 1,
+ "model": {
+  "x_dim": 31,
+  "z_dim": 32,
+  "hidden": 128,
+  "n_hidden": 1,
+  "activation": "relu",
+  "lr": 0.0002,
+  "beta1": 0.5,
+  "beta2": 0.999,
+  "batch_size": 256,
+  "epochs": 20,
+  "d_steps": 1,
+  "seed": 4,
+  "latent_prior": "normal"
+ },
+ "score": {
+  "name": "neg_logit_discriminator_pair",
+  "direction": "malicious_if_score_above_threshold"
+ },
+ "threshold": {
+  "policy": "f1_weighted",
+  "prevalence": 0.1,
+  "target_fpr": 0.05,
+  "fit_on": "validation",
+  "value": -0.4043252468109131,
+  "val_weighted_f1": 0.3952039365552885
+ },
+ "validation": {
+  "roc_auc": 0.5882068066750508,
+  "direction_check": {
+   "auc": 0.5882068066750508,
+   "ok": true,
+   "rule": "malicious_if_score_above_threshold"
+  },
+  "threshold": {
+   "policy": "f1_weighted",
+   "prevalence": 0.1,
+   "target_fpr": 0.05,
+   "fit_on": "validation",
+   "value": -0.4043252468109131,
+   "val_weighted_f1": 0.3952039365552885
+  },
+  "metrics_at_validation_threshold": {
+   "TP": 6687,
+   "TN": 11500,
+   "FP": 1969,
+   "FN": 5039,
+   "accuracy": 0.7218495733280412,
+   "precision": 0.7725277264325323,
+   "recall": 0.5702711922224117,
+   "TPR": 0.5702711922224117,
+   "FPR": 0.1461875417625659,
+   "F1": 0.6561672063585517
+  },
+  "prevalence_adjusted_at_10_percent": {
+   "prevalence": 0.1,
+   "precision": 0.3023772900868477,
+   "recall": 0.5702711922224117,
+   "F1": 0.39520393655528846,
+   "accuracy": 0.8254583316359319
+  }
+ },
+ "selection": {
+  "method": "mutual_information_then_pca",
+  "mi_selected_fields": [
+   "src_bytes",
+   "service",
+   "dst_bytes",
+   "diff_srv_rate",
+   "flag"
+  ],
+  "pca_variance_candidates": [
+   0.9,
+   0.95,
+   0.99
+  ],
+  "selected_pca_variance": 0.9,
+  "selected_component_count": 31,
+  "mi_scores": {
+   "duration": 0.026502837181134442,
+   "protocol_type": 0.04347822430314152,
+   "service": 0.4639415523966236,
+   "flag": 0.35934214698919514,
+   "src_bytes": 0.5662197456328111,
+   "dst_bytes": 0.43976646655128127,
+   "land": 7.580459168377018e-06,
+   "wrong_fragment": 0.006242294074217503,
+   "urgent": 0.0,
+   "hot": 0.008346921944971442,
+   "num_failed_logins": 0.0,
+   "logged_in": 0.289263982977084,
+   "num_compromised": 0.003973009256427851,
+   "root_shell": 0.0007771447004993881,
+   "su_attempted": 0.003164273495666059,
+   "num_root": 0.0014349660675325726,
+   "num_file_creations": 0.001855646174247827,
+   "num_shells": 0.0,
+   "num_access_files": 0.0033082764200655923,
+   "num_outbound_cmds": 0.002952572438475576,
+   "is_host_login": 0.0,
+   "is_guest_login": 0.0025904678726274,
+   "count": 0.2627712059157028,
+   "srv_count": 0.06540473902007049,
+   "serror_rate": 0.2765794490335929,
+   "srv_serror_rate": 0.270083567795784,
+   "rerror_rate": 0.04145857613559034,
+   "srv_rerror_rate": 0.038918189041036166,
+   "same_srv_rate": 0.3540144169376096,
+   "diff_srv_rate": 0.35968858429414796,
+   "srv_diff_host_rate": 0.0978001445793153,
+   "dst_host_count": 0.14197297689206634,
+   "dst_host_srv_count": 0.3309602980341382,
+   "dst_host_same_srv_rate": 0.30262121076346404,
+   "dst_host_diff_srv_rate": 0.2851555740483007,
+   "dst_host_same_src_port_rate": 0.13311874428596093,
+   "dst_host_srv_diff_host_rate": 0.18943157634402463,
+   "dst_host_serror_rate": 0.28724170191547693,
+   "dst_host_srv_serror_rate": 0.28147198467029577,
+   "dst_host_rerror_rate": 0.03667773801941121,
+   "dst_host_srv_rerror_rate": 0.061576220165943996
+  }
+ },
+ "feature_schema": "feature_schema.json",
+ "preprocessor_schema_hash": "8b68f3ed44b518f6",
+ "model_file_bytes": 103131,
+ "parameter_count": 24768,
+ "timing": {
+  "selected_training_seconds": 7.027907667012187,
+  "search_training_seconds": 25.828043874993455,
+  "model_only_ms_per_record": 0.0642494997009635,
+  "transform_plus_model_ms_per_record": 0.4363960033515468
+ }
+}

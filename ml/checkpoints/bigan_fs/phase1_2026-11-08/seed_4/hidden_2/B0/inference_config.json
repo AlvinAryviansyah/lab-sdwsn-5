@@ -1,0 +1,81 @@
+{
+ "format_version": 1,
+ "variant": "B0",
+ "seed": 4,
+ "n_hidden": 2,
+ "model": {
+  "x_dim": 122,
+  "z_dim": 32,
+  "hidden": 128,
+  "n_hidden": 2,
+  "activation": "relu",
+  "lr": 0.0002,
+  "beta1": 0.5,
+  "beta2": 0.999,
+  "batch_size": 256,
+  "epochs": 20,
+  "d_steps": 1,
+  "seed": 4,
+  "latent_prior": "normal"
+ },
+ "score": {
+  "name": "neg_logit_discriminator_pair",
+  "direction": "malicious_if_score_above_threshold"
+ },
+ "threshold": {
+  "policy": "f1_weighted",
+  "prevalence": 0.1,
+  "target_fpr": 0.05,
+  "fit_on": "validation",
+  "value": 0.4190094655271165,
+  "val_weighted_f1": 0.10483447454503589
+ },
+ "validation": {
+  "roc_auc": 0.18339535955914305,
+  "direction_check": {
+   "auc": 0.18339535955914305,
+   "ok": false,
+   "rule": "malicious_if_score_above_threshold"
+  },
+  "threshold": {
+   "policy": "f1_weighted",
+   "prevalence": 0.1,
+   "target_fpr": 0.05,
+   "fit_on": "validation",
+   "value": 0.4190094655271165,
+   "val_weighted_f1": 0.10483447454503589
+  },
+  "metrics_at_validation_threshold": {
+   "TP": 910,
+   "TN": 12866,
+   "FP": 603,
+   "FN": 10816,
+   "accuracy": 0.5467751538003572,
+   "precision": 0.6014540647719762,
+   "recall": 0.07760532150776053,
+   "TPR": 0.07760532150776053,
+   "FPR": 0.04476947063627589,
+   "F1": 0.1374726187778533
+  },
+  "prevalence_adjusted_at_10_percent": {
+   "prevalence": 0.1,
+   "precision": 0.16149924357449424,
+   "recall": 0.07760532150776053,
+   "F1": 0.10483447454503587,
+   "accuracy": 0.8674680085781278
+  }
+ },
+ "selection": {
+  "method": "all_original_fields"
+ },
+ "feature_schema": "feature_schema.json",
+ "preprocessor_schema_hash": "8b68f3ed44b518f6",
+ "model_file_bytes": 442749,
+ "parameter_count": 109339,
+ "timing": {
+  "selected_training_seconds": 11.914067959005479,
+  "search_training_seconds": 12.811295124993194,
+  "model_only_ms_per_record": 0.07799950253684074,
+  "transform_plus_model_ms_per_record": 0.38429150299634784
+ }
+}

@@ -1,0 +1,73 @@
+[1/36] n=20 seed=1 tag=_s4fA
+    selesai dalam 1 s
+[2/36] n=30 seed=1 tag=_s4fA
+    selesai dalam 3 s
+[3/36] n=40 seed=1 tag=_s4fA
+    selesai dalam 3 s
+[4/36] n=50 seed=1 tag=_s4fA
+    selesai dalam 6 s
+[5/36] n=60 seed=1 tag=_s4fA
+    selesai dalam 7 s
+[6/36] n=70 seed=1 tag=_s4fA
+    selesai dalam 9 s
+[7/36] n=80 seed=1 tag=_s4fA
+    selesai dalam 15 s
+[8/36] n=90 seed=1 tag=_s4fA
+    selesai dalam 14 s
+[9/36] n=100 seed=1 tag=_s4fA
+    selesai dalam 17 s
+[10/36] n=20 seed=2 tag=_s4fA
+    selesai dalam 2 s
+[11/36] n=30 seed=2 tag=_s4fA
+    selesai dalam 2 s
+[12/36] n=40 seed=2 tag=_s4fA
+    selesai dalam 4 s
+[13/36] n=50 seed=2 tag=_s4fA
+    selesai dalam 5 s
+[14/36] n=60 seed=2 tag=_s4fA
+    selesai dalam 7 s
+[15/36] n=70 seed=2 tag=_s4fA
+    selesai dalam 10 s
+[16/36] n=80 seed=2 tag=_s4fA
+    selesai dalam 11 s
+[17/36] n=90 seed=2 tag=_s4fA
+    selesai dalam 13 s
+[18/36] n=100 seed=2 tag=_s4fA
+    selesai dalam 17 s
+[19/36] n=20 seed=3 tag=_s4fA
+    selesai dalam 2 s
+[20/36] n=30 seed=3 tag=_s4fA
+    selesai dalam 2 s
+[21/36] n=40 seed=3 tag=_s4fA
+    selesai dalam 3 s
+[22/36] n=50 seed=3 tag=_s4fA
+    selesai dalam 6 s
+[23/36] n=60 seed=3 tag=_s4fA
+    selesai dalam 6 s
+[24/36] n=70 seed=3 tag=_s4fA
+    selesai dalam 9 s
+[25/36] n=80 seed=3 tag=_s4fA
+    selesai dalam 11 s
+[26/36] n=90 seed=3 tag=_s4fA
+    selesai dalam 15 s
+[27/36] n=100 seed=3 tag=_s4fA
+    selesai dalam 16 s
+[28/36] n=20 seed=1 tag=_s4cA
+    selesai dalam 1 s
+[29/36] n=60 seed=1 tag=_s4cA
+    selesai dalam 7 s
+[30/36] n=100 seed=1 tag=_s4cA
+    selesai dalam 16 s
+[31/36] n=20 seed=2 tag=_s4cA
+    selesai dalam 1 s
+[32/36] n=60 seed=2 tag=_s4cA
+    selesai dalam 7 s
+[33/36] n=100 seed=2 tag=_s4cA
+    selesai dalam 16 s
+[34/36] n=20 seed=3 tag=_s4cA
+    selesai dalam 1 s
+[35/36] n=60 seed=3 tag=_s4cA
+    selesai dalam 7 s
+[36/36] n=100 seed=3 tag=_s4cA
+    selesai dalam 16 s
+Selesai: 36/36 sukses, 0 gagal. Status: /home/lab/sdwsn/status_runA.csv

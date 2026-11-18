@@ -1,0 +1,17 @@
+[0/2] Re-checking globbed directories...
+ninja: no work to do.
+  [Bi-GAN] 20 keputusan dimuat dari results/bigan_decisions_20_s1.csv (model PyTorch, NSL-KDD).
+  [Bi-GAN] prediksi 20 window dimuat dari results/bigan_windows_20_s1.csv
+  [TLDQN] 22 entri next-hop dimuat dari results/routes_stage2/tldqn_nexthop_20_s1.csv (20 sensor, rute tervalidasi bebas loop).
+msg="File keputusan hybrid tidak ditemukan: results/step4/dec_F2/hybrid_decisions_20_s1.csv (jalankan ml/hybrid_ids.py)", file=/app/ns-3-dev/scratch/honeycomb-sdwsn.cc, line=690
+NS_FATAL, terminating
+   0# ns3::FatalImpl::PrintStackTrace() at /app/ns-3-dev/src/core/model/fatal-impl.cc:90
+   1# HybridIds::Load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int) at /app/ns-3-dev/scratch/honeycomb-sdwsn.cc:690
+   2# main at /app/ns-3-dev/scratch/honeycomb-sdwsn.cc:2045
+   3# __libc_start_call_main at ../sysdeps/nptl/libc_start_call_main.h:59
+   4# __libc_start_main_impl at ../csu/libc-start.c:360
+   5# _start at :0
+   6# 
+
+terminate called without an active exception
+Command 'build/scratch/ns3-dev-honeycomb-sdwsn-default --profile=paper --numNodes=20 --seed=1 --outCsv=results/metrics_20_s1_s4B_F2.csv --tsCsv=results/timeseries_20_s1_s4B_F2.csv --routeDir=results/routes_stage2 --telemDir=results/telemetry_s4B_F2 --idsSource=file --idsDir=results/step4/dec_F2 --telemWindow=7.3' died with <Signals.SIGABRT: 6>.

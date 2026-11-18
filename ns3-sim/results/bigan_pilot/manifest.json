@@ -1,0 +1,18 @@
+{
+ "nodes": 100,
+ "clean_seeds": [
+  101,
+  102,
+  103
+ ],
+ "calibration_seed": 104,
+ "evaluation_seeds": [
+  1,
+  2,
+  3
+ ],
+ "scenario_dir": "ns3-sim/results/bigan_pilot/scenarios",
+ "route_dir": "ns3-sim/results/bigan_pilot/routes",
+ "route_trust_source": "none",
+ "note": "GT in scenario inputs controls simulated attacker behavior only; feature extractor never reads it."
+}

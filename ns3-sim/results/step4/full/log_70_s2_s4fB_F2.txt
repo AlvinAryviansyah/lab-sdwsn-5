@@ -1,0 +1,65 @@
+[0/2] Re-checking globbed directories...
+ninja: no work to do.
+  [Bi-GAN] 70 keputusan dimuat dari results/bigan_decisions_70_s2.csv (model PyTorch, NSL-KDD).
+  [Bi-GAN] prediksi 20 window dimuat dari results/bigan_windows_70_s2.csv
+  [TLDQN] 85 entri next-hop dimuat dari results/routes_stage2/tldqn_nexthop_70_s2.csv (70 sensor, rute tervalidasi bebas loop).
+  [Hybrid IDS] 70 keputusan dimuat dari results/step4f/dec_stage2_F2/hybrid_decisions_70_s2.csv
+  [TLDQN] 85 entri next-hop dimuat dari results/step4f/dec_stage2_F2/reroute_nexthop_70_s2.csv (70 sensor, rute tervalidasi bebas loop).
+
+######################################################
+#  HieMulti-Block: AI-Based IDS/IPS di Edge-Assisted SDWSN
+#  Topologi: Modified Honeycomb Structure (ns-3.48)
+######################################################
+
+Jaringan: 70 sensor, 10 user, 4 edge-sink, 4 switch, 1 master + 2 slave controller, 3 blockchain, 1 cloud, 1 TA.
+  [TLDQN] 85 host route dipasang; 7 relay grayhole (pDrop=0.7).
+  [IDS] idsSource=file: gerbang isolasi transit dipasang di 70 sensor.
+
+=== TAHAP 1: Secure Authentication (3D Cube + DNN) ===
+  TA mem-registrasi node (ID, PUF, lokasi, random) lalu meng-generate private key via 3D Cube.
+  Private key disimpan di HieMulti-Block (lihat results/).
+  Clone attack detection dilakukan (validasi random number).
+  [HieMulti-Block] main chain len=80, shards=3
+     side chain[0] len=22
+     side chain[1] len=33
+     side chain[2] len=25
+
+=== TAHAP 2: Modified Honeycomb Partitioning & Clustering (1/7) ===
+  [Honeycomb] Clustering 1/7: 7 sel/cluster, Sc = 49 sensor/cluster (pers. 15).
+  CH dipilih via bobot (centrality, distance, energy, trust), w_i=0.25 (pers. 16).
+  [Honeycomb] CH feature => centrality=20 distance=10 energy=47 trust=63 | WCH=35 | network=78 cells=91 sensors=7
+
+=== TAHAP 3: RL-based Intelligent Routing (TLDQN) ===
+  TLDQN: rata-rata hop terencana = 2 (multi-hop, jangkauan 150 m)
+  TLDQN: sensor per sink = [22, 3, 20, 25]; 7 node malicious mengirim flooding (faktor 1.5-5).
+
+=== TAHAP 4: Hybrid IDS (DTO malicious + Bi-GAN intrusion) ===
+  [IDS] snapshot pra-tindakan ditulis ke results/step4f/telemetry_s4fB_F2/ids_snapshot_70_s2.csv
+  [IDS] sumber keputusan = file
+  [Bi-GAN] confusion => TP=2 TN=63 FP=0 FN=5
+  [DTO]    confusion => TP=2 TN=63 FP=0 FN=5
+  [IPS] node diisolasi = 2 (DTO 2, Bi-GAN saja 0; penyerang terisolasi 2); alarm Bi-GAN = 2
+  [Reroute] 3 host route diganti; 0 entri tanpa alternatif (tetap, dilaporkan).
+
+=== TAHAP 4c: Intrusion Prevention (optimal delegator) ===
+  Delegator optimal = sensor 61 (sisa energi 99.9873 J); kirim alarm ke edge-sink 3.
+
+######################################################
+#  TAHAP 6: HASIL EVALUASI (node=70)
+######################################################
+Energy consumption : 63.3791 J
+Avg latency        : 0.411721 ms
+Throughput         : 31.4573 kbps
+PDR                : 98.47 %
+Packet drop ratio  : 1.53 %
+Detection accuracy : 93.3571 %
+Precision          : 72.8155 %
+Recall             : 53.5714 %
+F1-score           : 61.7284 %
+Confusion matrix   : TP=75 TN=1232 FP=28 FN=65
+Network lifetime   : 66267.9 s (proyeksi)
+Computation ovhd   : 19.0514 % (RT=0.0968992 ms)
+Control overhead   : 3.06833 mps
+
+Metrik ditulis ke: results/metrics_70_s2_s4fB_F2.csv
+  [Telemetry] 4276 watch (+0 terpotong akhir sim; fwd=4173 late=0 rxfail=50 clean=53) -> results/step4f/telemetry_s4fB_F2/telemetry_*70_s2*

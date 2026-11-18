@@ -1,0 +1,168 @@
+{
+ "format_version": 1,
+ "variant": "V+C",
+ "seed": 1,
+ "n_hidden": 1,
+ "model": {
+  "x_dim": 114,
+  "z_dim": 32,
+  "hidden": 128,
+  "n_hidden": 1,
+  "activation": "relu",
+  "lr": 0.0002,
+  "beta1": 0.5,
+  "beta2": 0.999,
+  "batch_size": 256,
+  "epochs": 20,
+  "d_steps": 1,
+  "seed": 1,
+  "latent_prior": "normal"
+ },
+ "score": {
+  "name": "neg_logit_discriminator_pair",
+  "direction": "malicious_if_score_above_threshold"
+ },
+ "threshold": {
+  "policy": "f1_weighted",
+  "prevalence": 0.1,
+  "target_fpr": 0.05,
+  "fit_on": "validation",
+  "value": 0.9263294927446459,
+  "val_weighted_f1": 0.19024936527994504
+ },
+ "validation": {
+  "roc_auc": 0.20592036872511096,
+  "direction_check": {
+   "auc": 0.20592036872511096,
+   "ok": false,
+   "rule": "malicious_if_score_above_threshold"
+  },
+  "threshold": {
+   "policy": "f1_weighted",
+   "prevalence": 0.1,
+   "target_fpr": 0.05,
+   "fit_on": "validation",
+   "value": 0.9263294927446459,
+   "val_weighted_f1": 0.19024936527994504
+  },
+  "metrics_at_validation_threshold": {
+   "TP": 1619,
+   "TN": 13000,
+   "FP": 469,
+   "FN": 10107,
+   "accuracy": 0.5802341734471125,
+   "precision": 0.7753831417624522,
+   "recall": 0.13806924782534538,
+   "TPR": 0.13806924782534538,
+   "FPR": 0.03482069938377014,
+   "F1": 0.23439988417547414
+  },
+  "prevalence_adjusted_at_10_percent": {
+   "prevalence": 0.1,
+   "precision": 0.30583132755059594,
+   "recall": 0.13806924782534538,
+   "F1": 0.19024936527994502,
+   "accuracy": 0.8824682953371414
+  }
+ },
+ "selection": {
+  "method": "label_free_variance_correlation",
+  "details": {
+   "field_variance": {
+    "duration": 0.9999999978468185,
+    "protocol_type": 2.9999999188201723,
+    "service": 70.00000000807263,
+    "flag": 10.99999993873351,
+    "src_bytes": 0.999999965464997,
+    "dst_bytes": 0.9999999984548036,
+    "land": 0.9999999062420006,
+    "wrong_fragment": 0.9999999332201844,
+    "urgent": 1.0000000405685723,
+    "hot": 0.99999999159025,
+    "num_failed_logins": 0.9999999912743947,
+    "logged_in": 0.9999999274396186,
+    "num_compromised": 1.000000005278359,
+    "root_shell": 1.0000000197735004,
+    "su_attempted": 0.9999999320038448,
+    "num_root": 1.0000000827507871,
+    "num_file_creations": 1.00000000836164,
+    "num_shells": 0.9999999734460798,
+    "num_access_files": 1.0000000133456175,
+    "num_outbound_cmds": 0.0,
+    "is_host_login": 0.9999999041808006,
+    "is_guest_login": 1.0000000437380716,
+    "count": 0.9999999902728715,
+    "srv_count": 0.9999999789625486,
+    "serror_rate": 1.0000000091393442,
+    "srv_serror_rate": 0.999999972098658,
+    "rerror_rate": 0.9999999886447885,
+    "srv_rerror_rate": 0.999999950446172,
+    "same_srv_rate": 0.9999999822293014,
+    "diff_srv_rate": 0.9999999806928299,
+    "srv_diff_host_rate": 1.0000000291006432,
+    "dst_host_count": 1.000000014385452,
+    "dst_host_srv_count": 1.0000000038392078,
+    "dst_host_same_srv_rate": 0.9999999665304692,
+    "dst_host_diff_srv_rate": 0.9999999735609472,
+    "dst_host_same_src_port_rate": 1.0000000055212603,
+    "dst_host_srv_diff_host_rate": 1.000000017508701,
+    "dst_host_serror_rate": 0.9999999954394273,
+    "dst_host_srv_serror_rate": 1.0000000061152876,
+    "dst_host_rerror_rate": 1.0000000126660982,
+    "dst_host_srv_rerror_rate": 1.0000000509459293
+   },
+   "constant_fields": [
+    "num_outbound_cmds"
+   ],
+   "correlation_pruned": [
+    {
+     "dropped": "serror_rate",
+     "kept": "flag",
+     "threshold": 0.95
+    },
+    {
+     "dropped": "dst_host_srv_serror_rate",
+     "kept": "flag",
+     "threshold": 0.95
+    },
+    {
+     "dropped": "num_compromised",
+     "kept": "num_root",
+     "threshold": 0.95
+    },
+    {
+     "dropped": "dst_host_serror_rate",
+     "kept": "flag",
+     "threshold": 0.95
+    },
+    {
+     "dropped": "rerror_rate",
+     "kept": "dst_host_srv_rerror_rate",
+     "threshold": 0.95
+    },
+    {
+     "dropped": "srv_serror_rate",
+     "kept": "flag",
+     "threshold": 0.95
+    },
+    {
+     "dropped": "srv_rerror_rate",
+     "kept": "dst_host_srv_rerror_rate",
+     "threshold": 0.95
+    }
+   ],
+   "correlation_threshold": 0.95
+  },
+  "selected_field_count": 33
+ },
+ "feature_schema": "feature_schema.json",
+ "preprocessor_schema_hash": "8b68f3ed44b518f6",
+ "model_file_bytes": 231003,
+ "parameter_count": 56723,
+ "timing": {
+  "selected_training_seconds": 8.097281750000548,
+  "search_training_seconds": 8.993475584022235,
+  "model_only_ms_per_record": 0.06066699279472232,
+  "transform_plus_model_ms_per_record": 0.3792504867305979
+ }
+}

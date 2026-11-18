@@ -1,0 +1,186 @@
+{
+ "meta_fusion": "BIGAN",
+ "meta_dto": {
+  "variant": "main",
+  "b_max_observer": null,
+  "method": "pra-K9 (utama)",
+  "windows": [
+   0
+  ],
+  "config": "beku langkah 3 (m=30,Y=100,N_min=10,delta=0.1,alpha=0.01)"
+ },
+ "detection_at_t_ids": {
+  "dto": {
+   "TP": 12,
+   "FP": 2,
+   "FN": 18,
+   "TN": 268,
+   "precision": 0.8571428571428571,
+   "recall": 0.4,
+   "f1": 0.5454545454545455,
+   "accuracy": 0.9333333333333333,
+   "fpr": 0.007407407407407408
+  },
+  "bigan": {
+   "TP": 27,
+   "FP": 7,
+   "FN": 3,
+   "TN": 263,
+   "precision": 0.7941176470588235,
+   "recall": 0.9,
+   "f1": 0.84375,
+   "accuracy": 0.9666666666666667,
+   "fpr": 0.025925925925925925
+  },
+  "isolate": {
+   "TP": 27,
+   "FP": 7,
+   "FN": 3,
+   "TN": 263,
+   "precision": 0.7941176470588235,
+   "recall": 0.9,
+   "f1": 0.84375,
+   "accuracy": 0.9666666666666667,
+   "fpr": 0.025925925925925925
+  }
+ },
+ "dto_insufficient_evidence": 176,
+ "dto_coverage_malicious": [
+  12,
+  30
+ ],
+ "honest_isolated": 7,
+ "failed_paths": [
+  0,
+  266
+ ],
+ "network_paired": {},
+ "scenarios": [
+  {
+   "n": 100,
+   "seed": 4,
+   "dto": {
+    "TP": 4,
+    "FP": 0,
+    "FN": 6,
+    "TN": 90,
+    "precision": 1.0,
+    "recall": 0.4,
+    "f1": 0.5714285714285715,
+    "accuracy": 0.94,
+    "fpr": 0.0
+   },
+   "bigan": {
+    "TP": 8,
+    "FP": 3,
+    "FN": 2,
+    "TN": 87,
+    "precision": 0.7272727272727273,
+    "recall": 0.8,
+    "f1": 0.761904761904762,
+    "accuracy": 0.95,
+    "fpr": 0.03333333333333333
+   },
+   "isolate": {
+    "TP": 8,
+    "FP": 3,
+    "FN": 2,
+    "TN": 87,
+    "precision": 0.7272727272727273,
+    "recall": 0.8,
+    "f1": 0.761904761904762,
+    "accuracy": 0.95,
+    "fpr": 0.03333333333333333
+   },
+   "reroute": {
+    "changed_entries": 18,
+    "failed_entries": 0,
+    "failed_paths": 0
+   }
+  },
+  {
+   "n": 100,
+   "seed": 5,
+   "dto": {
+    "TP": 3,
+    "FP": 1,
+    "FN": 7,
+    "TN": 89,
+    "precision": 0.75,
+    "recall": 0.3,
+    "f1": 0.4285714285714285,
+    "accuracy": 0.92,
+    "fpr": 0.011111111111111112
+   },
+   "bigan": {
+    "TP": 9,
+    "FP": 3,
+    "FN": 1,
+    "TN": 87,
+    "precision": 0.75,
+    "recall": 0.9,
+    "f1": 0.8181818181818182,
+    "accuracy": 0.96,
+    "fpr": 0.03333333333333333
+   },
+   "isolate": {
+    "TP": 9,
+    "FP": 3,
+    "FN": 1,
+    "TN": 87,
+    "precision": 0.75,
+    "recall": 0.9,
+    "f1": 0.8181818181818182,
+    "accuracy": 0.96,
+    "fpr": 0.03333333333333333
+   },
+   "reroute": {
+    "changed_entries": 12,
+    "failed_entries": 0,
+    "failed_paths": 0
+   }
+  },
+  {
+   "n": 100,
+   "seed": 6,
+   "dto": {
+    "TP": 5,
+    "FP": 1,
+    "FN": 5,
+    "TN": 89,
+    "precision": 0.8333333333333334,
+    "recall": 0.5,
+    "f1": 0.625,
+    "accuracy": 0.94,
+    "fpr": 0.011111111111111112
+   },
+   "bigan": {
+    "TP": 10,
+    "FP": 1,
+    "FN": 0,
+    "TN": 89,
+    "precision": 0.9090909090909091,
+    "recall": 1.0,
+    "f1": 0.9523809523809523,
+    "accuracy": 0.99,
+    "fpr": 0.011111111111111112
+   },
+   "isolate": {
+    "TP": 10,
+    "FP": 1,
+    "FN": 0,
+    "TN": 89,
+    "precision": 0.9090909090909091,
+    "recall": 1.0,
+    "f1": 0.9523809523809523,
+    "accuracy": 0.99,
+    "fpr": 0.011111111111111112
+   },
+   "reroute": {
+    "changed_entries": 10,
+    "failed_entries": 0,
+    "failed_paths": 0
+   }
+  }
+ ]
+}

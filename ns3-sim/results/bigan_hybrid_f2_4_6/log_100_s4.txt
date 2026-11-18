@@ -1,0 +1,64 @@
+[0/2] Re-checking globbed directories...
+ninja: no work to do.
+  [Bi-GAN] 100 keputusan dimuat dari /home/lab/sdwsn/ns3-sim/results/bigan_pilot_test_4_6/scenarios/bigan_decisions_100_s4.csv (model PyTorch, NSL-KDD).
+  [Bi-GAN] prediksi 1 window dimuat dari /home/lab/sdwsn/ns3-sim/results/bigan_pilot_test_4_6/scenarios/bigan_windows_100_s4.csv
+  [TLDQN] 132 entri next-hop dimuat dari /home/lab/sdwsn/ns3-sim/results/bigan_pilot_test_4_6/routes/tldqn_nexthop_100_s4.csv (100 sensor, rute tervalidasi bebas loop).
+  [Hybrid IDS] 100 keputusan dimuat dari /home/lab/sdwsn/ns3-sim/results/bigan_hybrid_f2_decisions_4_6/hybrid_decisions_100_s4.csv
+  [TLDQN] 132 entri next-hop dimuat dari /home/lab/sdwsn/ns3-sim/results/bigan_hybrid_f2_decisions_4_6/reroute_nexthop_100_s4.csv (100 sensor, rute tervalidasi bebas loop).
+  [warn] /home/lab/sdwsn/ns3-sim/results/bigan_pilot_test_4_6/scenarios/ai_timing.csv tidak ada; waktu komputasi AI = 0.
+
+######################################################
+#  HieMulti-Block: AI-Based IDS/IPS di Edge-Assisted SDWSN
+#  Topologi: Modified Honeycomb Structure (ns-3.48)
+######################################################
+
+Jaringan: 100 sensor, 10 user, 4 edge-sink, 4 switch, 1 master + 2 slave controller, 3 blockchain, 1 cloud, 1 TA.
+  [TLDQN] 132 host route dipasang; 10 relay grayhole (pDrop=0.7).
+  [IDS] idsSource=file: gerbang isolasi transit dipasang di 100 sensor.
+
+=== TAHAP 1: Secure Authentication (3D Cube + DNN) ===
+  TA mem-registrasi node (ID, PUF, lokasi, random) lalu meng-generate private key via 3D Cube.
+  Private key disimpan di HieMulti-Block (lihat results/).
+  Clone attack detection dilakukan (validasi random number).
+  [HieMulti-Block] main chain len=110, shards=3
+     side chain[0] len=35
+     side chain[1] len=40
+     side chain[2] len=35
+
+=== TAHAP 2: Modified Honeycomb Partitioning & Clustering (1/7) ===
+  [Honeycomb] Clustering 1/7: 7 sel/cluster, Sc = 49 sensor/cluster (pers. 15).
+  CH dipilih via bobot (centrality, distance, energy, trust), w_i=0.25 (pers. 16).
+  [Honeycomb] CH feature => centrality=20 distance=10 energy=47 trust=63 | WCH=35 | network=78 cells=91 sensors=7
+
+=== TAHAP 3: RL-based Intelligent Routing (TLDQN) ===
+  TLDQN: rata-rata hop terencana = 2.22 (multi-hop, jangkauan 150 m)
+  TLDQN: sensor per sink = [27, 20, 20, 33]; 10 node malicious mengirim flooding (faktor 1.5-5).
+
+=== TAHAP 4: Hybrid IDS (DTO malicious + Bi-GAN intrusion) ===
+  [IDS] snapshot pra-tindakan ditulis ke results/bigan_hybrid_f2_20261107_233629/telemetry/ids_snapshot_100_s4.csv
+  [IDS] sumber keputusan = file
+  [Bi-GAN pilot] evaluasi confusion setelah simulasi
+  [DTO]    confusion => TP=4 TN=90 FP=0 FN=6
+  [IPS] node diisolasi = 4 (DTO 4, Bi-GAN saja 0; penyerang terisolasi 4); alarm Bi-GAN = 11
+  [Reroute] 7 host route diganti; 0 entri tanpa alternatif (tetap, dilaporkan).
+  [Bi-GAN pilot] evaluasi pasca-simulasi => TP=8 TN=87 FP=3 FN=2
+
+######################################################
+#  TAHAP 6: HASIL EVALUASI (node=100)
+######################################################
+Energy consumption : 1.97734 J
+Avg latency        : 2.78888 ms
+Throughput         : 1864.12 kbps
+PDR                : 89.5277 %
+Packet drop ratio  : 10.1848 %
+Detection accuracy : 95 %
+Precision          : 72.7273 %
+Recall             : 80 %
+F1-score           : 76.1905 %
+Confusion matrix   : TP=8 TN=87 FP=3 FN=2
+Network lifetime   : 50573 s (proyeksi)
+Computation ovhd   : 0.0100777 % (RT=0.000281082 ms)
+Control overhead   : 62.4 mps
+
+Metrik ditulis ke: results/bigan_hybrid_f2_20261107_233629/seed_4/metrics.csv
+  [Telemetry] 5606 watch (+699 terpotong akhir sim; fwd=5093 late=0 rxfail=303 clean=210) -> results/bigan_hybrid_f2_20261107_233629/telemetry/telemetry_*100_s4*

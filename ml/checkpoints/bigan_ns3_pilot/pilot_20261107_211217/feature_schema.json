@@ -1,0 +1,51 @@
+{
+ "feature_schema_version": 2,
+ "feature_names": [
+  "origin_packets",
+  "origin_bytes",
+  "mean_origin_packet_bytes",
+  "ip_received_packets",
+  "ip_local_packets",
+  "mac_acked",
+  "mac_nacked",
+  "mac_retry_drops",
+  "mac_other_drops",
+  "mac_response_timeouts",
+  "phy_tx_mpdu",
+  "phy_tx_bytes",
+  "mean_phy_tx_bytes",
+  "phy_rx_ok_mpdu",
+  "phy_rx_failed_mpdu",
+  "phy_rx_dropped_mpdu",
+  "watch_started_as_observer",
+  "observed_watches",
+  "observed_forwarded",
+  "observed_forwarded_late",
+  "observed_unobserved_rxfail",
+  "observed_unobserved_clean",
+  "observed_neighbor_count",
+  "observed_rx_ok_mpdu",
+  "observed_mac_acked",
+  "observed_mac_nacked",
+  "observed_mac_retry_drops",
+  "observed_mac_other_drops",
+  "observed_ack_timeouts",
+  "observed_mean_rssi_dbm",
+  "observed_mean_snr_db",
+  "observed_mean_forward_delay_s"
+ ],
+ "transforms": {
+  "counts_and_bytes": "log1p then train-fitted StandardScaler",
+  "means_and_radio_quality": "train-fitted StandardScaler"
+ },
+ "excluded": [
+  "actual_mal",
+  "pred_intrusion",
+  "self_ip_fwd_*",
+  "self_ip_drop_*",
+  "watchdog_audit",
+  "IP/transport ports not exported"
+ ],
+ "window_index": 0,
+ "window_s": 7.3
+}

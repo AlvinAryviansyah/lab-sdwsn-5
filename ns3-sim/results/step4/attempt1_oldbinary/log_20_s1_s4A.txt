@@ -1,0 +1,47 @@
+[0/2] Re-checking globbed directories...
+ninja: no work to do.
+Invalid command-line argument: --idsSource=none
+ [Program Options] [General Arguments]
+
+Program Options:
+    --profile:          paper (Tabel 4-5) | code (setara kode rilis penulis) [paper]
+    --wifiStd:          ac (80 MHz VhtMcs2) | a (802.11a, phyMode) [ac]
+    --varPktSize:       ukuran paket 64..1024 byte acak [true]
+    --tcpUsers:         trafik TCP user -> cloud [false]
+    --userRate:         laju aplikasi user (mis. 500Kbps) [500Kbps]
+    --windowSec:        lebar window metrik time-based (detik) [30]
+    --anim:             tulis XML NetAnim (berat) [false]
+    --tsCsv:            path CSV time-series (default otomatis)
+    --routeDir:         folder tldqn_nexthop_<n>_s<seed>.csv (default = aiDir)
+    --maxRange:         jangkauan radio maks (m), 0 = tanpa batas [150]
+    --grayholeDrop:     peluang relay malicious menjatuhkan paket transit [0.7]
+    --telemetry:        tulis telemetry NS-3 (observasi pasif) [true]
+    --telemDir:         folder keluaran telemetry [results]
+    --telemWindow:      lebar window telemetry (s), mulai t=0 [30]
+    --wdTimeout:        watchdog: batas delay 'forwarded' (s) [0.1]
+    --wdLate:           watchdog: batas delay 'forwarded_late' / timeout (s) [1]
+    --numNodes:         jumlah sensor node [100]
+    --numUsers:         jumlah IoT user [10]
+    --packetSize:       ukuran paket aplikasi (byte) [1024]
+    --numPackets:       jumlah paket [50]
+    --attackers:        target DTO (-1 = 10% dari numNodes) [-1]
+    --aiDir:            folder CSV keputusan AI (bigan_decisions_<n>_s<seed>.csv, ai_timing.csv) [results]
+    --idleCurrentA:     arus idle radio sensor (A) [0.0005]
+    --rxCurrentA:       arus RX radio sensor (A) [0.0188]
+    --ccaBusyCurrentA:  arus CCA-busy radio sensor (A) [0.0005]
+    --simTime:          durasi simulasi (detik) [600]
+    --seed:             RNG seed [1]
+    --phyMode:          WiFi PHY mode [OfdmRate54Mbps]
+    --flowmon:          aktifkan FlowMonitor [true]
+    --outCsv:           path output CSV metrik [results/metrics.csv]
+
+General Arguments:
+    --PrintGlobals:              Print the list of globals.
+    --PrintGroups:               Print the list of groups.
+    --PrintGroup=[group]:        Print all TypeIds of group.
+    --PrintTypeIds:              Print all TypeIds.
+    --PrintAttributes=[typeid]:  Print all attributes of typeid.
+    --PrintVersion:              Print the ns-3 version.
+    --PrintHelp:                 Print this help message.
+
+Command 'build/scratch/ns3-dev-honeycomb-sdwsn-default --profile=paper --numNodes=20 --seed=1 --outCsv=results/metrics_20_s1_s4A.csv --tsCsv=results/timeseries_20_s1_s4A.csv --routeDir=results/routes_stage2 --telemDir=results/telemetry_s4A --idsSource=none --telemWindow=7.3' returned non-zero exit status 1.

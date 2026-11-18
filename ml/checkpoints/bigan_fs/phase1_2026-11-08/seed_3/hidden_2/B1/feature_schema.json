@@ -1,0 +1,488 @@
+{
+ "variant": "B1",
+ "original_fields": [
+  "duration",
+  "protocol_type",
+  "service",
+  "flag",
+  "src_bytes",
+  "dst_bytes",
+  "land",
+  "wrong_fragment",
+  "urgent",
+  "hot",
+  "num_failed_logins",
+  "logged_in",
+  "num_compromised",
+  "root_shell",
+  "su_attempted",
+  "num_root",
+  "num_file_creations",
+  "num_shells",
+  "num_access_files",
+  "num_outbound_cmds",
+  "is_host_login",
+  "is_guest_login",
+  "count",
+  "srv_count",
+  "serror_rate",
+  "srv_serror_rate",
+  "rerror_rate",
+  "srv_rerror_rate",
+  "same_srv_rate",
+  "diff_srv_rate",
+  "srv_diff_host_rate",
+  "dst_host_count",
+  "dst_host_srv_count",
+  "dst_host_same_srv_rate",
+  "dst_host_diff_srv_rate",
+  "dst_host_same_src_port_rate",
+  "dst_host_srv_diff_host_rate",
+  "dst_host_serror_rate",
+  "dst_host_srv_serror_rate",
+  "dst_host_rerror_rate",
+  "dst_host_srv_rerror_rate"
+ ],
+ "selected_fields": [
+  "src_bytes",
+  "service",
+  "dst_bytes",
+  "diff_srv_rate",
+  "flag",
+  "same_srv_rate",
+  "dst_host_srv_count",
+  "dst_host_same_srv_rate",
+  "logged_in",
+  "dst_host_serror_rate"
+ ],
+ "field_columns": {
+  "duration": [
+   0
+  ],
+  "src_bytes": [
+   1
+  ],
+  "dst_bytes": [
+   2
+  ],
+  "land": [
+   3
+  ],
+  "wrong_fragment": [
+   4
+  ],
+  "urgent": [
+   5
+  ],
+  "hot": [
+   6
+  ],
+  "num_failed_logins": [
+   7
+  ],
+  "logged_in": [
+   8
+  ],
+  "num_compromised": [
+   9
+  ],
+  "root_shell": [
+   10
+  ],
+  "su_attempted": [
+   11
+  ],
+  "num_root": [
+   12
+  ],
+  "num_file_creations": [
+   13
+  ],
+  "num_shells": [
+   14
+  ],
+  "num_access_files": [
+   15
+  ],
+  "num_outbound_cmds": [
+   16
+  ],
+  "is_host_login": [
+   17
+  ],
+  "is_guest_login": [
+   18
+  ],
+  "count": [
+   19
+  ],
+  "srv_count": [
+   20
+  ],
+  "serror_rate": [
+   21
+  ],
+  "srv_serror_rate": [
+   22
+  ],
+  "rerror_rate": [
+   23
+  ],
+  "srv_rerror_rate": [
+   24
+  ],
+  "same_srv_rate": [
+   25
+  ],
+  "diff_srv_rate": [
+   26
+  ],
+  "srv_diff_host_rate": [
+   27
+  ],
+  "dst_host_count": [
+   28
+  ],
+  "dst_host_srv_count": [
+   29
+  ],
+  "dst_host_same_srv_rate": [
+   30
+  ],
+  "dst_host_diff_srv_rate": [
+   31
+  ],
+  "dst_host_same_src_port_rate": [
+   32
+  ],
+  "dst_host_srv_diff_host_rate": [
+   33
+  ],
+  "dst_host_serror_rate": [
+   34
+  ],
+  "dst_host_srv_serror_rate": [
+   35
+  ],
+  "dst_host_rerror_rate": [
+   36
+  ],
+  "dst_host_srv_rerror_rate": [
+   37
+  ],
+  "protocol_type": [
+   38,
+   39,
+   40
+  ],
+  "service": [
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59,
+   60,
+   61,
+   62,
+   63,
+   64,
+   65,
+   66,
+   67,
+   68,
+   69,
+   70,
+   71,
+   72,
+   73,
+   74,
+   75,
+   76,
+   77,
+   78,
+   79,
+   80,
+   81,
+   82,
+   83,
+   84,
+   85,
+   86,
+   87,
+   88,
+   89,
+   90,
+   91,
+   92,
+   93,
+   94,
+   95,
+   96,
+   97,
+   98,
+   99,
+   100,
+   101,
+   102,
+   103,
+   104,
+   105,
+   106,
+   107,
+   108,
+   109
+  ],
+  "flag": [
+   110,
+   111,
+   112,
+   113,
+   114,
+   115,
+   116,
+   117,
+   118,
+   119,
+   120
+  ]
+ },
+ "encoded_feature_names": [
+  "duration",
+  "src_bytes",
+  "dst_bytes",
+  "land",
+  "wrong_fragment",
+  "urgent",
+  "hot",
+  "num_failed_logins",
+  "logged_in",
+  "num_compromised",
+  "root_shell",
+  "su_attempted",
+  "num_root",
+  "num_file_creations",
+  "num_shells",
+  "num_access_files",
+  "num_outbound_cmds",
+  "is_host_login",
+  "is_guest_login",
+  "count",
+  "srv_count",
+  "serror_rate",
+  "srv_serror_rate",
+  "rerror_rate",
+  "srv_rerror_rate",
+  "same_srv_rate",
+  "diff_srv_rate",
+  "srv_diff_host_rate",
+  "dst_host_count",
+  "dst_host_srv_count",
+  "dst_host_same_srv_rate",
+  "dst_host_diff_srv_rate",
+  "dst_host_same_src_port_rate",
+  "dst_host_srv_diff_host_rate",
+  "dst_host_serror_rate",
+  "dst_host_srv_serror_rate",
+  "dst_host_rerror_rate",
+  "dst_host_srv_rerror_rate",
+  "protocol_type_icmp",
+  "protocol_type_tcp",
+  "protocol_type_udp",
+  "service_IRC",
+  "service_X11",
+  "service_Z39_50",
+  "service_aol",
+  "service_auth",
+  "service_bgp",
+  "service_courier",
+  "service_csnet_ns",
+  "service_ctf",
+  "service_daytime",
+  "service_discard",
+  "service_domain",
+  "service_domain_u",
+  "service_echo",
+  "service_eco_i",
+  "service_ecr_i",
+  "service_efs",
+  "service_exec",
+  "service_finger",
+  "service_ftp",
+  "service_ftp_data",
+  "service_gopher",
+  "service_harvest",
+  "service_hostnames",
+  "service_http",
+  "service_http_443",
+  "service_http_8001",
+  "service_imap4",
+  "service_iso_tsap",
+  "service_klogin",
+  "service_kshell",
+  "service_ldap",
+  "service_link",
+  "service_login",
+  "service_mtp",
+  "service_name",
+  "service_netbios_dgm",
+  "service_netbios_ns",
+  "service_netbios_ssn",
+  "service_netstat",
+  "service_nnsp",
+  "service_nntp",
+  "service_ntp_u",
+  "service_other",
+  "service_pm_dump",
+  "service_pop_2",
+  "service_pop_3",
+  "service_printer",
+  "service_private",
+  "service_red_i",
+  "service_remote_job",
+  "service_rje",
+  "service_shell",
+  "service_smtp",
+  "service_sql_net",
+  "service_ssh",
+  "service_sunrpc",
+  "service_supdup",
+  "service_systat",
+  "service_telnet",
+  "service_tftp_u",
+  "service_tim_i",
+  "service_time",
+  "service_urh_i",
+  "service_urp_i",
+  "service_uucp",
+  "service_uucp_path",
+  "service_vmnet",
+  "service_whois",
+  "flag_OTH",
+  "flag_REJ",
+  "flag_RSTO",
+  "flag_RSTOS0",
+  "flag_RSTR",
+  "flag_S0",
+  "flag_S1",
+  "flag_S2",
+  "flag_S3",
+  "flag_SF",
+  "flag_SH"
+ ],
+ "preprocessor_schema_hash": "ac62ead0a989fad9",
+ "preprocessor_n_features": 121,
+ "selection": {
+  "method": "mutual_information",
+  "candidate_field_counts": [
+   5,
+   10,
+   15,
+   20,
+   30,
+   41
+  ],
+  "selected_field_count": 10,
+  "ranked_fields": [
+   "src_bytes",
+   "service",
+   "dst_bytes",
+   "diff_srv_rate",
+   "flag",
+   "same_srv_rate",
+   "dst_host_srv_count",
+   "dst_host_same_srv_rate",
+   "logged_in",
+   "dst_host_serror_rate",
+   "dst_host_diff_srv_rate",
+   "dst_host_srv_serror_rate",
+   "serror_rate",
+   "srv_serror_rate",
+   "count",
+   "dst_host_srv_diff_host_rate",
+   "dst_host_count",
+   "dst_host_same_src_port_rate",
+   "srv_diff_host_rate",
+   "dst_host_srv_rerror_rate",
+   "srv_count",
+   "protocol_type",
+   "rerror_rate",
+   "srv_rerror_rate",
+   "dst_host_rerror_rate",
+   "duration",
+   "wrong_fragment",
+   "hot",
+   "num_root",
+   "num_access_files",
+   "num_compromised",
+   "num_shells",
+   "su_attempted",
+   "num_failed_logins",
+   "root_shell",
+   "is_guest_login",
+   "urgent",
+   "num_outbound_cmds",
+   "land",
+   "num_file_creations",
+   "is_host_login"
+  ],
+  "mi_scores": {
+   "duration": 0.024518314206914527,
+   "protocol_type": 0.043282343980523795,
+   "service": 0.46676272587955,
+   "flag": 0.3594703704209343,
+   "src_bytes": 0.5656859552456148,
+   "dst_bytes": 0.44018670683488326,
+   "land": 0.0,
+   "wrong_fragment": 0.008750573678514284,
+   "urgent": 0.00029815344957695444,
+   "hot": 0.005850369664942345,
+   "num_failed_logins": 0.0015864752767413837,
+   "logged_in": 0.2882455435756721,
+   "num_compromised": 0.0039068158592954205,
+   "root_shell": 0.001163279078712165,
+   "su_attempted": 0.0017307971185169801,
+   "num_root": 0.005197662901278655,
+   "num_file_creations": 0.0,
+   "num_shells": 0.002588946289988625,
+   "num_access_files": 0.004515434471529689,
+   "num_outbound_cmds": 8.636019688501584e-05,
+   "is_host_login": 0.0,
+   "is_guest_login": 0.0007572186863724628,
+   "count": 0.2651742026438568,
+   "srv_count": 0.06240712418998928,
+   "serror_rate": 0.27717439669054245,
+   "srv_serror_rate": 0.2679222044867915,
+   "rerror_rate": 0.040730115633069275,
+   "srv_rerror_rate": 0.04024720788125702,
+   "same_srv_rate": 0.3560549934359296,
+   "diff_srv_rate": 0.3602492646945883,
+   "srv_diff_host_rate": 0.1019554258325881,
+   "dst_host_count": 0.14446006280858215,
+   "dst_host_srv_count": 0.3314717236689766,
+   "dst_host_same_srv_rate": 0.303355028437579,
+   "dst_host_diff_srv_rate": 0.2844194333289367,
+   "dst_host_same_src_port_rate": 0.13416571619855833,
+   "dst_host_srv_diff_host_rate": 0.19124831757342187,
+   "dst_host_serror_rate": 0.2848684878345835,
+   "dst_host_srv_serror_rate": 0.28213111962546744,
+   "dst_host_rerror_rate": 0.036291748511732225,
+   "dst_host_srv_rerror_rate": 0.0644922884446324
+  }
+ },
+ "model_n_features": 88,
+ "pca": null
+}

@@ -1,0 +1,166 @@
+{
+ "run_id": "pilot_20261107_211217",
+ "nodes": 100,
+ "seeds": [
+  4,
+  5,
+  6
+ ],
+ "per_seed": [
+  {
+   "n": 100,
+   "seed": 4,
+   "confusion": {
+    "TP": 8,
+    "TN": 87,
+    "FP": 3,
+    "FN": 2
+   },
+   "metrics": {
+    "TP": 8,
+    "TN": 87,
+    "FP": 3,
+    "FN": 2,
+    "accuracy": 0.95,
+    "precision": 0.7272727272727273,
+    "recall": 0.8,
+    "TPR": 0.8,
+    "FPR": 0.03333333333333333,
+    "F1": 0.761904761904762
+   },
+   "roc_auc": 0.9822222222222222,
+   "threshold": 0.4741064757,
+   "alarms": 11,
+   "timing": {
+    "run_id": "pilot_20261107_211217",
+    "nodes": 100,
+    "seed": 4,
+    "window": 0,
+    "source_features_sha256": {
+     "node": "393a5c99baceda15a800c63ce0a4e457be8deaf2655d6d448896b4b25904f004",
+     "links": "974bd8079c313626872022680865915ef385f91f7366db91b79e437b507a1e7b"
+    },
+    "feature_schema_version": 2,
+    "contains_ground_truth": false,
+    "threshold": 0.4741064757,
+    "threshold_source": "override",
+    "feature_extraction_ms": 12.612082995474339,
+    "model_inference_total_ms": 8.576624997658655,
+    "model_inference_ms_per_record": 0.08576624997658655
+   },
+   "labels_used_only_for_evaluation": true
+  },
+  {
+   "n": 100,
+   "seed": 5,
+   "confusion": {
+    "TP": 9,
+    "TN": 87,
+    "FP": 3,
+    "FN": 1
+   },
+   "metrics": {
+    "TP": 9,
+    "TN": 87,
+    "FP": 3,
+    "FN": 1,
+    "accuracy": 0.96,
+    "precision": 0.75,
+    "recall": 0.9,
+    "TPR": 0.9,
+    "FPR": 0.03333333333333333,
+    "F1": 0.8181818181818182
+   },
+   "roc_auc": 0.9755555555555555,
+   "threshold": 0.4741064757,
+   "alarms": 12,
+   "timing": {
+    "run_id": "pilot_20261107_211217",
+    "nodes": 100,
+    "seed": 5,
+    "window": 0,
+    "source_features_sha256": {
+     "node": "94e0ef40b19b8a7bc84e596a32d4f959a51802fc7ce9b9e21ebe3060dca7d568",
+     "links": "b8e70fb805bd50c4a557f7c01b6d1e98635dfb06e7172edd3b32f3d99143a23a"
+    },
+    "feature_schema_version": 2,
+    "contains_ground_truth": false,
+    "threshold": 0.4741064757,
+    "threshold_source": "override",
+    "feature_extraction_ms": 12.96383302542381,
+    "model_inference_total_ms": 0.37166697438806295,
+    "model_inference_ms_per_record": 0.0037166697438806295
+   },
+   "labels_used_only_for_evaluation": true
+  },
+  {
+   "n": 100,
+   "seed": 6,
+   "confusion": {
+    "TP": 10,
+    "TN": 89,
+    "FP": 1,
+    "FN": 0
+   },
+   "metrics": {
+    "TP": 10,
+    "TN": 89,
+    "FP": 1,
+    "FN": 0,
+    "accuracy": 0.99,
+    "precision": 0.9090909090909091,
+    "recall": 1.0,
+    "TPR": 1.0,
+    "FPR": 0.011111111111111112,
+    "F1": 0.9523809523809523
+   },
+   "roc_auc": 0.9933333333333334,
+   "threshold": 0.4741064757,
+   "alarms": 11,
+   "timing": {
+    "run_id": "pilot_20261107_211217",
+    "nodes": 100,
+    "seed": 6,
+    "window": 0,
+    "source_features_sha256": {
+     "node": "b8e4186408ea96071286231d5e6425e59f4f4dff19ed1a45467efae0c380b894",
+     "links": "39fbd7f8960ec46109769706888c051870de96825f95804b111a0c4a33a565b2"
+    },
+    "feature_schema_version": 2,
+    "contains_ground_truth": false,
+    "threshold": 0.4741064757,
+    "threshold_source": "override",
+    "feature_extraction_ms": 12.621667003259063,
+    "model_inference_total_ms": 0.40754099609330297,
+    "model_inference_ms_per_record": 0.00407540996093303
+   },
+   "labels_used_only_for_evaluation": true
+  }
+ ],
+ "pooled": {
+  "confusion": {
+   "TP": 27,
+   "TN": 263,
+   "FP": 7,
+   "FN": 3
+  },
+  "metrics": {
+   "TP": 27,
+   "TN": 263,
+   "FP": 7,
+   "FN": 3,
+   "accuracy": 0.9666666666666667,
+   "precision": 0.7941176470588235,
+   "recall": 0.9,
+   "TPR": 0.9,
+   "FPR": 0.025925925925925925,
+   "F1": 0.84375
+  }
+ },
+ "threshold_selection_label_seeds": [
+  1,
+  2,
+  3
+ ],
+ "no_threshold_or_model_selection_on_labels": false
+}

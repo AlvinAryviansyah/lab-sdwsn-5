@@ -1,0 +1,168 @@
+{
+ "format_version": 1,
+ "variant": "V+C",
+ "seed": 3,
+ "n_hidden": 1,
+ "model": {
+  "x_dim": 113,
+  "z_dim": 32,
+  "hidden": 128,
+  "n_hidden": 1,
+  "activation": "relu",
+  "lr": 0.0002,
+  "beta1": 0.5,
+  "beta2": 0.999,
+  "batch_size": 256,
+  "epochs": 20,
+  "d_steps": 1,
+  "seed": 3,
+  "latent_prior": "normal"
+ },
+ "score": {
+  "name": "neg_logit_discriminator_pair",
+  "direction": "malicious_if_score_above_threshold"
+ },
+ "threshold": {
+  "policy": "f1_weighted",
+  "prevalence": 0.1,
+  "target_fpr": 0.05,
+  "fit_on": "validation",
+  "value": 0.8464048600531456,
+  "val_weighted_f1": 0.04401627196321799
+ },
+ "validation": {
+  "roc_auc": 0.10018241140384308,
+  "direction_check": {
+   "auc": 0.10018241140384308,
+   "ok": false,
+   "rule": "malicious_if_score_above_threshold"
+  },
+  "threshold": {
+   "policy": "f1_weighted",
+   "prevalence": 0.1,
+   "target_fpr": 0.05,
+   "fit_on": "validation",
+   "value": 0.8464048600531456,
+   "val_weighted_f1": 0.04401627196321799
+  },
+  "metrics_at_validation_threshold": {
+   "TP": 394,
+   "TN": 12731,
+   "FP": 738,
+   "FN": 11332,
+   "accuracy": 0.5209366937884501,
+   "precision": 0.3480565371024735,
+   "recall": 0.03360054579566775,
+   "TPR": 0.03360054579566775,
+   "FPR": 0.05479248645036751,
+   "F1": 0.06128480323533987
+  },
+  "prevalence_adjusted_at_10_percent": {
+   "prevalence": 0.1,
+   "precision": 0.06379047952829636,
+   "recall": 0.03360054579566775,
+   "F1": 0.044016271963218,
+   "accuracy": 0.8540468167742361
+  }
+ },
+ "selection": {
+  "method": "label_free_variance_correlation",
+  "details": {
+   "field_variance": {
+    "duration": 1.0000000006645418,
+    "protocol_type": 3.000000004943262,
+    "service": 69.00000093235647,
+    "flag": 10.999999949505444,
+    "src_bytes": 0.9999999967943519,
+    "dst_bytes": 0.9999999240282031,
+    "land": 0.9999999062422834,
+    "wrong_fragment": 0.9999999466768829,
+    "urgent": 0.9999999635957338,
+    "hot": 1.0000000181701483,
+    "num_failed_logins": 0.9999999611754086,
+    "logged_in": 0.9999999460091535,
+    "num_compromised": 1.0000000295068978,
+    "root_shell": 0.999999964722708,
+    "su_attempted": 1.000000001512018,
+    "num_root": 0.9999999796402393,
+    "num_file_creations": 1.0000000111979814,
+    "num_shells": 1.000000028988172,
+    "num_access_files": 0.9999999813697686,
+    "num_outbound_cmds": 0.0,
+    "is_host_login": 0.9999999041807933,
+    "is_guest_login": 1.0000000304140775,
+    "count": 1.0000000104439386,
+    "srv_count": 1.000000025423076,
+    "serror_rate": 1.0000000487875265,
+    "srv_serror_rate": 0.9999999785762429,
+    "rerror_rate": 0.9999999885453746,
+    "srv_rerror_rate": 0.9999999581462569,
+    "same_srv_rate": 0.9999999795539144,
+    "diff_srv_rate": 1.000000025226278,
+    "srv_diff_host_rate": 0.99999998103125,
+    "dst_host_count": 0.999999998475075,
+    "dst_host_srv_count": 1.0000000295182012,
+    "dst_host_same_srv_rate": 0.9999999600546426,
+    "dst_host_diff_srv_rate": 0.999999970809658,
+    "dst_host_same_src_port_rate": 1.0000000016141757,
+    "dst_host_srv_diff_host_rate": 0.9999999944063589,
+    "dst_host_serror_rate": 0.9999999686102857,
+    "dst_host_srv_serror_rate": 0.9999999444159163,
+    "dst_host_rerror_rate": 1.000000022861598,
+    "dst_host_srv_rerror_rate": 0.9999999368008315
+   },
+   "constant_fields": [
+    "num_outbound_cmds"
+   ],
+   "correlation_pruned": [
+    {
+     "dropped": "serror_rate",
+     "kept": "flag",
+     "threshold": 0.95
+    },
+    {
+     "dropped": "num_root",
+     "kept": "num_compromised",
+     "threshold": 0.95
+    },
+    {
+     "dropped": "srv_serror_rate",
+     "kept": "flag",
+     "threshold": 0.95
+    },
+    {
+     "dropped": "dst_host_serror_rate",
+     "kept": "flag",
+     "threshold": 0.95
+    },
+    {
+     "dropped": "srv_rerror_rate",
+     "kept": "rerror_rate",
+     "threshold": 0.95
+    },
+    {
+     "dropped": "dst_host_srv_serror_rate",
+     "kept": "flag",
+     "threshold": 0.95
+    },
+    {
+     "dropped": "dst_host_srv_rerror_rate",
+     "kept": "rerror_rate",
+     "threshold": 0.95
+    }
+   ],
+   "correlation_threshold": 0.95
+  },
+  "selected_field_count": 33
+ },
+ "feature_schema": "feature_schema.json",
+ "preprocessor_schema_hash": "ac62ead0a989fad9",
+ "model_file_bytes": 229467,
+ "parameter_count": 56338,
+ "timing": {
+  "selected_training_seconds": 7.717071291990578,
+  "search_training_seconds": 8.609796959004598,
+  "model_only_ms_per_record": 0.060125006712041795,
+  "transform_plus_model_ms_per_record": 0.3783959982683882
+ }
+}

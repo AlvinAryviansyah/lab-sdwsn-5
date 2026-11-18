@@ -1,0 +1,423 @@
+{
+ "meta_fusion": "F2",
+ "meta_dto": {
+  "variant": "main",
+  "b_max_observer": null,
+  "method": "pra-K9 (utama)",
+  "windows": [
+   0
+  ],
+  "config": "beku langkah 3 (m=30,Y=100,N_min=10,delta=0.1,alpha=0.01)"
+ },
+ "detection_at_t_ids": {
+  "dto": {
+   "TP": 12,
+   "FP": 2,
+   "FN": 18,
+   "TN": 268,
+   "precision": 0.8571428571428571,
+   "recall": 0.4,
+   "f1": 0.5454545454545455,
+   "accuracy": 0.9333333333333333,
+   "fpr": 0.007407407407407408
+  },
+  "bigan": {
+   "TP": 27,
+   "FP": 7,
+   "FN": 3,
+   "TN": 263,
+   "precision": 0.7941176470588235,
+   "recall": 0.9,
+   "f1": 0.84375,
+   "accuracy": 0.9666666666666667,
+   "fpr": 0.025925925925925925
+  },
+  "isolate": {
+   "TP": 12,
+   "FP": 2,
+   "FN": 18,
+   "TN": 268,
+   "precision": 0.8571428571428571,
+   "recall": 0.4,
+   "f1": 0.5454545454545455,
+   "accuracy": 0.9333333333333333,
+   "fpr": 0.007407407407407408
+  }
+ },
+ "dto_insufficient_evidence": 176,
+ "dto_coverage_malicious": [
+  12,
+  30
+ ],
+ "honest_isolated": 2,
+ "failed_paths": [
+  0,
+  286
+ ],
+ "network_paired": {
+  "pdr_percent": {
+   "n_pairs": 3,
+   "mean_B_minus_A": 1.6738999999999986,
+   "median_B_minus_A": 1.9545999999999992,
+   "B_gt_A": 3,
+   "B_lt_A": 0,
+   "equal": 0
+  },
+  "benign_pdr_percent": {
+   "n_pairs": 3,
+   "mean_B_minus_A": 2.120200000000002,
+   "median_B_minus_A": 2.3255999999999943,
+   "B_gt_A": 3,
+   "B_lt_A": 0,
+   "equal": 0
+  },
+  "benign_tx_packets": {
+   "n_pairs": 3,
+   "mean_B_minus_A": -5.666666666666667,
+   "median_B_minus_A": -8.0,
+   "B_gt_A": 0,
+   "B_lt_A": 2,
+   "equal": 1
+  },
+  "benign_rx_packets": {
+   "n_pairs": 3,
+   "mean_B_minus_A": 73.0,
+   "median_B_minus_A": 86.0,
+   "B_gt_A": 3,
+   "B_lt_A": 0,
+   "equal": 0
+  },
+  "packet_drop_ratio_percent": {
+   "n_pairs": 3,
+   "mean_B_minus_A": -1.6773533333333335,
+   "median_B_minus_A": -1.9596,
+   "B_gt_A": 0,
+   "B_lt_A": 3,
+   "equal": 0
+  },
+  "throughput_kbps": {
+   "n_pairs": 3,
+   "mean_B_minus_A": -5.129999999999882,
+   "median_B_minus_A": 6.3900000000001,
+   "B_gt_A": 2,
+   "B_lt_A": 1,
+   "equal": 0
+  },
+  "latency_ms": {
+   "n_pairs": 3,
+   "mean_B_minus_A": 0.014841333333333337,
+   "median_B_minus_A": 0.01968700000000001,
+   "B_gt_A": 3,
+   "B_lt_A": 0,
+   "equal": 0
+  },
+  "energy_consumption_J": {
+   "n_pairs": 3,
+   "mean_B_minus_A": -0.002543333333333416,
+   "median_B_minus_A": -0.0013900000000002244,
+   "B_gt_A": 0,
+   "B_lt_A": 3,
+   "equal": 0
+  },
+  "grayhole_drops": {
+   "n_pairs": 3,
+   "mean_B_minus_A": -96.0,
+   "median_B_minus_A": -106.0,
+   "B_gt_A": 0,
+   "B_lt_A": 3,
+   "equal": 0
+  },
+  "control_overhead_mps": {
+   "n_pairs": 3,
+   "mean_B_minus_A": 0.4666666666666662,
+   "median_B_minus_A": 0.3999999999999986,
+   "B_gt_A": 3,
+   "B_lt_A": 0,
+   "equal": 0
+  }
+ },
+ "scenarios": [
+  {
+   "n": 100,
+   "seed": 4,
+   "dto": {
+    "TP": 4,
+    "FP": 0,
+    "FN": 6,
+    "TN": 90,
+    "precision": 1.0,
+    "recall": 0.4,
+    "f1": 0.5714285714285715,
+    "accuracy": 0.94,
+    "fpr": 0.0
+   },
+   "bigan": {
+    "TP": 8,
+    "FP": 3,
+    "FN": 2,
+    "TN": 87,
+    "precision": 0.7272727272727273,
+    "recall": 0.8,
+    "f1": 0.761904761904762,
+    "accuracy": 0.95,
+    "fpr": 0.03333333333333333
+   },
+   "isolate": {
+    "TP": 4,
+    "FP": 0,
+    "FN": 6,
+    "TN": 90,
+    "precision": 1.0,
+    "recall": 0.4,
+    "f1": 0.5714285714285715,
+    "accuracy": 0.94,
+    "fpr": 0.0
+   },
+   "reroute": {
+    "changed_entries": 7,
+    "failed_entries": 0,
+    "failed_paths": 0
+   },
+   "network": {
+    "pdr_percent": {
+     "A": 87.5731,
+     "B": 89.5277
+    },
+    "benign_pdr_percent": {
+     "A": 85.8031,
+     "B": 88.1287
+    },
+    "benign_tx_packets": {
+     "A": 3698.0,
+     "B": 3698.0
+    },
+    "benign_rx_packets": {
+     "A": 3173.0,
+     "B": 3259.0
+    },
+    "packet_drop_ratio_percent": {
+     "A": 12.1444,
+     "B": 10.1848
+    },
+    "throughput_kbps": {
+     "A": 1857.6,
+     "B": 1864.12
+    },
+    "latency_ms": {
+     "A": 2.78786,
+     "B": 2.78888
+    },
+    "energy_consumption_J": {
+     "A": 1.9831,
+     "B": 1.97734
+    },
+    "grayhole_drops": {
+     "A": 602.0,
+     "B": 496.0
+    },
+    "control_overhead_mps": {
+     "A": 62.0,
+     "B": 62.4
+    }
+   },
+   "ids_counters_B": {
+    "isolation_transit_drops": 0.0,
+    "isolated_by_dto": 4.0,
+    "isolated_by_bigan_only": 0.0,
+    "bigan_alarms": 11.0,
+    "reroute_changed": 7.0,
+    "reroute_unresolved": 0.0,
+    "nodes_blocked": 4.0,
+    "attackers_blocked": 4.0
+   }
+  },
+  {
+   "n": 100,
+   "seed": 5,
+   "dto": {
+    "TP": 3,
+    "FP": 1,
+    "FN": 7,
+    "TN": 89,
+    "precision": 0.75,
+    "recall": 0.3,
+    "f1": 0.4285714285714285,
+    "accuracy": 0.92,
+    "fpr": 0.011111111111111112
+   },
+   "bigan": {
+    "TP": 9,
+    "FP": 3,
+    "FN": 1,
+    "TN": 87,
+    "precision": 0.75,
+    "recall": 0.9,
+    "f1": 0.8181818181818182,
+    "accuracy": 0.96,
+    "fpr": 0.03333333333333333
+   },
+   "isolate": {
+    "TP": 3,
+    "FP": 1,
+    "FN": 7,
+    "TN": 89,
+    "precision": 0.75,
+    "recall": 0.3,
+    "f1": 0.4285714285714285,
+    "accuracy": 0.92,
+    "fpr": 0.011111111111111112
+   },
+   "reroute": {
+    "changed_entries": 6,
+    "failed_entries": 0,
+    "failed_paths": 0
+   },
+   "network": {
+    "pdr_percent": {
+     "A": 95.8643,
+     "B": 96.5468
+    },
+    "benign_pdr_percent": {
+     "A": 96.6748,
+     "B": 97.2951
+    },
+    "benign_tx_packets": {
+     "A": 3669.0,
+     "B": 3660.0
+    },
+    "benign_rx_packets": {
+     "A": 3547.0,
+     "B": 3561.0
+    },
+    "packet_drop_ratio_percent": {
+     "A": 3.83457,
+     "B": 3.14671
+    },
+    "throughput_kbps": {
+     "A": 2408.14,
+     "B": 2379.84
+    },
+    "latency_ms": {
+     "A": 0.975753,
+     "B": 0.99544
+    },
+    "energy_consumption_J": {
+     "A": 2.02449,
+     "B": 2.0231
+    },
+    "grayhole_drops": {
+     "A": 191.0,
+     "B": 154.0
+    },
+    "control_overhead_mps": {
+     "A": 62.0,
+     "B": 62.4
+    }
+   },
+   "ids_counters_B": {
+    "isolation_transit_drops": 0.0,
+    "isolated_by_dto": 4.0,
+    "isolated_by_bigan_only": 0.0,
+    "bigan_alarms": 12.0,
+    "reroute_changed": 6.0,
+    "reroute_unresolved": 0.0,
+    "nodes_blocked": 4.0,
+    "attackers_blocked": 3.0
+   }
+  },
+  {
+   "n": 100,
+   "seed": 6,
+   "dto": {
+    "TP": 5,
+    "FP": 1,
+    "FN": 5,
+    "TN": 89,
+    "precision": 0.8333333333333334,
+    "recall": 0.5,
+    "f1": 0.625,
+    "accuracy": 0.94,
+    "fpr": 0.011111111111111112
+   },
+   "bigan": {
+    "TP": 10,
+    "FP": 1,
+    "FN": 0,
+    "TN": 89,
+    "precision": 0.9090909090909091,
+    "recall": 1.0,
+    "f1": 0.9523809523809523,
+    "accuracy": 0.99,
+    "fpr": 0.011111111111111112
+   },
+   "isolate": {
+    "TP": 5,
+    "FP": 1,
+    "FN": 5,
+    "TN": 89,
+    "precision": 0.8333333333333334,
+    "recall": 0.5,
+    "f1": 0.625,
+    "accuracy": 0.94,
+    "fpr": 0.011111111111111112
+   },
+   "reroute": {
+    "changed_entries": 9,
+    "failed_entries": 0,
+    "failed_paths": 0
+   },
+   "network": {
+    "pdr_percent": {
+     "A": 85.9843,
+     "B": 88.3689
+    },
+    "benign_pdr_percent": {
+     "A": 82.3928,
+     "B": 85.8075
+    },
+    "benign_tx_packets": {
+     "A": 3686.0,
+     "B": 3678.0
+    },
+    "benign_rx_packets": {
+     "A": 3037.0,
+     "B": 3156.0
+    },
+    "packet_drop_ratio_percent": {
+     "A": 14.0157,
+     "B": 11.6311
+    },
+    "throughput_kbps": {
+     "A": 1894.81,
+     "B": 1901.2
+    },
+    "latency_ms": {
+     "A": 0.394812,
+     "B": 0.418629
+    },
+    "energy_consumption_J": {
+     "A": 1.94754,
+     "B": 1.94706
+    },
+    "grayhole_drops": {
+     "A": 734.0,
+     "B": 589.0
+    },
+    "control_overhead_mps": {
+     "A": 62.0,
+     "B": 62.6
+    }
+   },
+   "ids_counters_B": {
+    "isolation_transit_drops": 0.0,
+    "isolated_by_dto": 6.0,
+    "isolated_by_bigan_only": 0.0,
+    "bigan_alarms": 11.0,
+    "reroute_changed": 9.0,
+    "reroute_unresolved": 0.0,
+    "nodes_blocked": 6.0,
+    "attackers_blocked": 5.0
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "format_version": 1,
+ "model": {
+  "x_dim": 32,
+  "z_dim": 32,
+  "hidden": 128,
+  "n_hidden": 1,
+  "activation": "relu",
+  "lr": 0.0002,
+  "beta1": 0.5,
+  "beta2": 0.999,
+  "batch_size": 256,
+  "epochs": 20,
+  "d_steps": 1,
+  "seed": 1,
+  "latent_prior": "normal"
+ },
+ "score": "-logit D(x, E(x)); high means more anomalous by fixed convention",
+ "threshold": 0.38273680210113525,
+ "threshold_method": "quantile of benign calibration scores only",
+ "calibration_fpr_target": 0.05,
+ "feature_schema": "feature_schema.json"
+}

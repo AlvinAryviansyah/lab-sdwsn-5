@@ -1,0 +1,168 @@
+{
+ "format_version": 1,
+ "variant": "V+C",
+ "seed": 2,
+ "n_hidden": 1,
+ "model": {
+  "x_dim": 113,
+  "z_dim": 32,
+  "hidden": 128,
+  "n_hidden": 1,
+  "activation": "relu",
+  "lr": 0.0002,
+  "beta1": 0.5,
+  "beta2": 0.999,
+  "batch_size": 256,
+  "epochs": 20,
+  "d_steps": 1,
+  "seed": 2,
+  "latent_prior": "normal"
+ },
+ "score": {
+  "name": "neg_logit_discriminator_pair",
+  "direction": "malicious_if_score_above_threshold"
+ },
+ "threshold": {
+  "policy": "f1_weighted",
+  "prevalence": 0.1,
+  "target_fpr": 0.05,
+  "fit_on": "validation",
+  "value": 0.1048172939827568,
+  "val_weighted_f1": 0.18733551415860306
+ },
+ "validation": {
+  "roc_auc": 0.24280763565869928,
+  "direction_check": {
+   "auc": 0.24280763565869928,
+   "ok": false,
+   "rule": "malicious_if_score_above_threshold"
+  },
+  "threshold": {
+   "policy": "f1_weighted",
+   "prevalence": 0.1,
+   "target_fpr": 0.05,
+   "fit_on": "validation",
+   "value": 0.1048172939827568,
+   "val_weighted_f1": 0.18733551415860306
+  },
+  "metrics_at_validation_threshold": {
+   "TP": 1837,
+   "TN": 12697,
+   "FP": 772,
+   "FN": 9889,
+   "accuracy": 0.5768604881921016,
+   "precision": 0.7041011881947106,
+   "recall": 0.15666041275797374,
+   "TPR": 0.15666041275797374,
+   "FPR": 0.05731680154428688,
+   "F1": 0.25629577956051625
+  },
+  "prevalence_adjusted_at_10_percent": {
+   "prevalence": 0.1,
+   "precision": 0.23294825925437643,
+   "recall": 0.15666041275797374,
+   "F1": 0.18733551415860308,
+   "accuracy": 0.8640809198859393
+  }
+ },
+ "selection": {
+  "method": "label_free_variance_correlation",
+  "details": {
+   "field_variance": {
+    "duration": 0.9999999963792681,
+    "protocol_type": 2.9999999382275937,
+    "service": 69.00000011052674,
+    "flag": 11.000000079923105,
+    "src_bytes": 0.9999999814795522,
+    "dst_bytes": 0.999999958019934,
+    "land": 1.0000000179732402,
+    "wrong_fragment": 1.0000000330714394,
+    "urgent": 1.0000000282973998,
+    "hot": 0.9999999799758358,
+    "num_failed_logins": 1.000000019668133,
+    "logged_in": 1.0000000251737884,
+    "num_compromised": 0.9999999712455508,
+    "root_shell": 0.9999999647228897,
+    "su_attempted": 0.9999999722268721,
+    "num_root": 0.9999999555503537,
+    "num_file_creations": 1.0000000063528567,
+    "num_shells": 0.9999999712551086,
+    "num_access_files": 1.000000022626675,
+    "num_outbound_cmds": 0.0,
+    "is_host_login": 0.9999999041808044,
+    "is_guest_login": 0.9999999328750336,
+    "count": 0.9999999948674687,
+    "srv_count": 0.9999999992934973,
+    "serror_rate": 1.0000000324655531,
+    "srv_serror_rate": 0.9999999365176445,
+    "rerror_rate": 1.000000061137127,
+    "srv_rerror_rate": 0.9999999934407484,
+    "same_srv_rate": 0.9999999806517196,
+    "diff_srv_rate": 0.9999999677157091,
+    "srv_diff_host_rate": 0.9999999580458109,
+    "dst_host_count": 0.9999999954807812,
+    "dst_host_srv_count": 1.0000000277597496,
+    "dst_host_same_srv_rate": 0.9999999662996544,
+    "dst_host_diff_srv_rate": 0.999999988153926,
+    "dst_host_same_src_port_rate": 0.9999999526528277,
+    "dst_host_srv_diff_host_rate": 0.9999999753895871,
+    "dst_host_serror_rate": 1.0000000071683788,
+    "dst_host_srv_serror_rate": 1.0000000178303297,
+    "dst_host_rerror_rate": 1.0000000050270514,
+    "dst_host_srv_rerror_rate": 0.9999999520627804
+   },
+   "constant_fields": [
+    "num_outbound_cmds"
+   ],
+   "correlation_pruned": [
+    {
+     "dropped": "serror_rate",
+     "kept": "flag",
+     "threshold": 0.95
+    },
+    {
+     "dropped": "dst_host_srv_serror_rate",
+     "kept": "flag",
+     "threshold": 0.95
+    },
+    {
+     "dropped": "dst_host_serror_rate",
+     "kept": "flag",
+     "threshold": 0.95
+    },
+    {
+     "dropped": "srv_rerror_rate",
+     "kept": "rerror_rate",
+     "threshold": 0.95
+    },
+    {
+     "dropped": "num_root",
+     "kept": "num_compromised",
+     "threshold": 0.95
+    },
+    {
+     "dropped": "dst_host_srv_rerror_rate",
+     "kept": "rerror_rate",
+     "threshold": 0.95
+    },
+    {
+     "dropped": "srv_serror_rate",
+     "kept": "flag",
+     "threshold": 0.95
+    }
+   ],
+   "correlation_threshold": 0.95
+  },
+  "selected_field_count": 33
+ },
+ "feature_schema": "feature_schema.json",
+ "preprocessor_schema_hash": "7dfe867f1b721cdd",
+ "model_file_bytes": 229467,
+ "parameter_count": 56338,
+ "timing": {
+  "selected_training_seconds": 7.399155250022886,
+  "search_training_seconds": 8.28260395801044,
+  "model_only_ms_per_record": 0.05989550845697522,
+  "transform_plus_model_ms_per_record": 0.3737499937415123
+ }
+}

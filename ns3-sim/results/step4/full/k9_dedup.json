@@ -1,0 +1,222 @@
+{
+ "stage2": {
+  "20_s1": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "30_s1": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "40_s1": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "50_s1": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "60_s1": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "70_s1": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "80_s1": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "90_s1": {
+   "decisions_identical": false,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "100_s1": {
+   "decisions_identical": false,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "20_s2": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "30_s2": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "40_s2": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "50_s2": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "60_s2": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "70_s2": {
+   "decisions_identical": false,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "80_s2": {
+   "decisions_identical": false,
+   "isolate_identical": false,
+   "reroute_identical": false,
+   "simulate": true
+  },
+  "90_s2": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "100_s2": {
+   "decisions_identical": false,
+   "isolate_identical": false,
+   "reroute_identical": false,
+   "simulate": true
+  },
+  "20_s3": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "30_s3": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "40_s3": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "50_s3": {
+   "decisions_identical": false,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "60_s3": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "70_s3": {
+   "decisions_identical": false,
+   "isolate_identical": false,
+   "reroute_identical": false,
+   "simulate": true
+  },
+  "80_s3": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "90_s3": {
+   "decisions_identical": false,
+   "isolate_identical": false,
+   "reroute_identical": false,
+   "simulate": true
+  },
+  "100_s3": {
+   "decisions_identical": false,
+   "isolate_identical": false,
+   "reroute_identical": false,
+   "simulate": true
+  }
+ },
+ "ctrl0": {
+  "20_s1": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "60_s1": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "100_s1": {
+   "decisions_identical": false,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "20_s2": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "60_s2": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "100_s2": {
+   "decisions_identical": false,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "20_s3": {
+   "decisions_identical": true,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "60_s3": {
+   "decisions_identical": false,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  },
+  "100_s3": {
+   "decisions_identical": false,
+   "isolate_identical": true,
+   "reroute_identical": true,
+   "simulate": false
+  }
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "run_id": "pilot_20261107_211217",
+ "nodes": 100,
+ "seed": 1,
+ "window": 0,
+ "source_features_sha256": {
+  "node": "fb26a0a25b9c9efdad0015fd0ed1a5d04b5453f26492e2a927037c001b054d99",
+  "links": "00c5c947eb52c5849159ec76cf47e9a53aed5b92ac266f8064d4ee998a6c9a72"
+ },
+ "feature_schema_version": 2,
+ "contains_ground_truth": false,
+ "feature_extraction_ms": 14.940541004762053,
+ "model_inference_total_ms": 22.732000012183562,
+ "model_inference_ms_per_record": 0.22732000012183562
+}

@@ -1,0 +1,17 @@
+{
+ "run_id": "pilot_20261107_211217",
+ "nodes": 100,
+ "seed": 4,
+ "window": 0,
+ "source_features_sha256": {
+  "node": "393a5c99baceda15a800c63ce0a4e457be8deaf2655d6d448896b4b25904f004",
+  "links": "974bd8079c313626872022680865915ef385f91f7366db91b79e437b507a1e7b"
+ },
+ "feature_schema_version": 2,
+ "contains_ground_truth": false,
+ "threshold": 0.4741064757,
+ "threshold_source": "override",
+ "feature_extraction_ms": 12.612082995474339,
+ "model_inference_total_ms": 8.576624997658655,
+ "model_inference_ms_per_record": 0.08576624997658655
+}

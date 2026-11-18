@@ -1,0 +1,1737 @@
+{
+ "created_at": "2026-11-08T00:20:58",
+ "design": "docs/STEP4_HYBRID_IDS_DESIGN.md",
+ "fusion": "F2",
+ "fusion_note": "utama: DTO mengisolasi, Bi-GAN alarm saja",
+ "dto": {
+  "variant": "main",
+  "b_max_observer": 0.8,
+  "method": "K9 (pembanding)",
+  "windows": [
+   0
+  ],
+  "config": "beku langkah 3 (m=30,Y=100,N_min=10,delta=0.1,alpha=0.01)"
+ },
+ "bigan_note": "prediksi dari sampel NSL-KDD yang ditugaskan berdasarkan label skenario; bukan deteksi independen trafik NS-3 (K14)",
+ "t_obs": 7.3,
+ "t_ids": 8.3,
+ "telem_dir": "ns3-sim/results/step4/telemetry_s4A",
+ "route_dir": "ns3-sim/results/routes_stage2",
+ "scenarios": {
+  "20_s1": {
+   "dto_steps": 1,
+   "dto_q0": 0.0,
+   "dto_candidates": 4,
+   "excluded_observers": {},
+   "counts": {
+    "malicious": 0,
+    "normal": 4,
+    "insufficient_evidence": 16
+   },
+   "bigan_alarms": 1,
+   "isolated": [],
+   "telemetry_links_sha256": "3677aa83232d68b77d560600f8ed213a446a380c7bf0dab1b924fb8cc60e9aec",
+   "bigan_file": "bigan_decisions_20_s1.csv",
+   "bigan_sha256": "e926d8704aacd06cdfb68603dd8dcf9872b66ddc54ab3a2d195938256bad0b57",
+   "route_table_sha256": "8528ff1141e4a9581d382fd75a75fc64c83db25de3e05acc32e67310903c7fe8",
+   "decisions_sha256": "9a83a7dd419a2e988f88a54d86c1a42177034a96e392d8f4bd37938883dc24da",
+   "reroute_sha256": "7e82738f648f694d763f25d8b2b62957ce70726c0d990f6d5e1884165f5d19ef",
+   "reroute": {
+    "changed_entries": [],
+    "failed_entries": [],
+    "paths": [
+     {
+      "source": 0,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 1,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 2,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 3,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 4,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 5,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 6,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 7,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 8,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 9,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 10,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 11,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 12,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 13,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 14,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 15,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 16,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 17,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 18,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 19,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     }
+    ]
+   }
+  },
+  "60_s1": {
+   "dto_steps": 2,
+   "dto_q0": 0.0,
+   "dto_candidates": 24,
+   "excluded_observers": {},
+   "counts": {
+    "malicious": 1,
+    "normal": 23,
+    "insufficient_evidence": 36
+   },
+   "bigan_alarms": 5,
+   "isolated": [
+    44
+   ],
+   "telemetry_links_sha256": "81d8326300c746161c8b1341b82fac40ae98d2d27593bd5204e04a8d3608bc86",
+   "bigan_file": "bigan_decisions_60_s1.csv",
+   "bigan_sha256": "54b97f7fba7d993fd3d0150abb10f7c29d28d9c27533f3f9cb8909a78fad98e7",
+   "route_table_sha256": "272dc1371d71cc1cb113279f57fe62dd2175a5dce2cc76ad57f8b64a34a19d62",
+   "decisions_sha256": "95ce0db0cf336b9ffe364bbb692a3e40ac82ef35d2a4c7a3012e0b3579c07d35",
+   "reroute_sha256": "3696e87661ef3a98a659b2d847235353c48bf02089de17e984040173694c467e",
+   "reroute": {
+    "changed_entries": [
+     {
+      "node_id": 45,
+      "dest_sink": 3,
+      "old_next_hop": 44,
+      "old_is_sink": 0,
+      "new_next_hop": 42,
+      "new_is_sink": 0
+     }
+    ],
+    "failed_entries": [],
+    "paths": [
+     {
+      "source": 0,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 1,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 2,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 3,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 4,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 5,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 6,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 7,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 8,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 9,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 10,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 11,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 12,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 13,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 14,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 15,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 16,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 17,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 18,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 19,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 20,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 21,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 22,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 23,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 24,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 25,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 26,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 27,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 28,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 29,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 30,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 31,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 32,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 33,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 34,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 35,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 36,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 37,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 38,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 39,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 40,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 41,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 42,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 43,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 45,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": true,
+      "hops_before": 4,
+      "hops_after": 4,
+      "before_via_isolated": true
+     },
+     {
+      "source": 46,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 47,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 48,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 49,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 50,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 51,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 4,
+      "hops_after": 4,
+      "before_via_isolated": false
+     },
+     {
+      "source": 52,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 4,
+      "hops_after": 4,
+      "before_via_isolated": false
+     },
+     {
+      "source": 53,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 54,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 55,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 56,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 57,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 58,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 59,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     }
+    ]
+   }
+  },
+  "100_s1": {
+   "dto_steps": 4,
+   "dto_q0": 0.0,
+   "dto_candidates": 35,
+   "excluded_observers": {
+    "0": 1.0,
+    "1": 1.0,
+    "11": 1.0,
+    "14": 1.0,
+    "24": 0.8,
+    "32": 1.0,
+    "33": 1.0,
+    "58": 1.0,
+    "64": 1.0,
+    "66": 0.896551724137931,
+    "68": 1.0,
+    "74": 1.0,
+    "75": 0.9197530864197531,
+    "80": 1.0,
+    "95": 1.0
+   },
+   "counts": {
+    "malicious": 3,
+    "normal": 32,
+    "insufficient_evidence": 65
+   },
+   "bigan_alarms": 7,
+   "isolated": [
+    16,
+    17,
+    36
+   ],
+   "telemetry_links_sha256": "766307fdf110c62c1423691e0433d6c895602f50338cc5ed4bd510307f19028d",
+   "bigan_file": "bigan_decisions_100_s1.csv",
+   "bigan_sha256": "4cc1b3c23126b93322080cee524530fe9075b950870755efbecd10a9a19a5a63",
+   "route_table_sha256": "b44ce274ce20a0a97883ef618bdd4a5ff24c1a0425826c35b9c16fc5d570adc2",
+   "decisions_sha256": "b1586932385fed7769291a90d06481e9eea8a8b21afa6c4a56a78eb916df48ef",
+   "reroute_sha256": "2f8680afadedef89004fa6bd938ca0b17a93f2b9a5e39b57377ff787b8426db1",
+   "reroute": {
+    "changed_entries": [
+     {
+      "node_id": 12,
+      "dest_sink": 0,
+      "old_next_hop": 16,
+      "old_is_sink": 0,
+      "new_next_hop": 0,
+      "new_is_sink": 1
+     },
+     {
+      "node_id": 67,
+      "dest_sink": 0,
+      "old_next_hop": 17,
+      "old_is_sink": 0,
+      "new_next_hop": 0,
+      "new_is_sink": 1
+     },
+     {
+      "node_id": 6,
+      "dest_sink": 2,
+      "old_next_hop": 36,
+      "old_is_sink": 0,
+      "new_next_hop": 2,
+      "new_is_sink": 1
+     }
+    ],
+    "failed_entries": [],
+    "paths": [
+     {
+      "source": 0,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 1,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": true,
+      "hops_before": 3,
+      "hops_after": 2,
+      "before_via_isolated": true
+     },
+     {
+      "source": 2,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 3,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 4,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 5,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 6,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": true,
+      "hops_before": 2,
+      "hops_after": 1,
+      "before_via_isolated": true
+     },
+     {
+      "source": 7,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 8,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": true,
+      "hops_before": 3,
+      "hops_after": 2,
+      "before_via_isolated": true
+     },
+     {
+      "source": 9,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 10,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 11,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 12,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": true,
+      "hops_before": 2,
+      "hops_after": 1,
+      "before_via_isolated": true
+     },
+     {
+      "source": 13,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": true,
+      "hops_before": 3,
+      "hops_after": 2,
+      "before_via_isolated": true
+     },
+     {
+      "source": 14,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 15,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 18,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 19,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 20,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 21,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 22,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 23,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 24,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 25,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 26,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 27,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 28,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 29,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 30,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 31,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 32,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 33,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 34,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 35,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 37,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 38,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 39,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 40,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 41,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 42,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 43,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 4,
+      "hops_after": 4,
+      "before_via_isolated": false
+     },
+     {
+      "source": 44,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 4,
+      "hops_after": 4,
+      "before_via_isolated": false
+     },
+     {
+      "source": 45,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 5,
+      "hops_after": 5,
+      "before_via_isolated": false
+     },
+     {
+      "source": 46,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 47,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 48,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 49,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 50,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 51,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 4,
+      "hops_after": 4,
+      "before_via_isolated": false
+     },
+     {
+      "source": 52,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 5,
+      "hops_after": 5,
+      "before_via_isolated": false
+     },
+     {
+      "source": 53,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 54,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 55,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 56,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 57,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 58,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 59,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 60,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 61,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 4,
+      "hops_after": 4,
+      "before_via_isolated": false
+     },
+     {
+      "source": 62,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 63,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 64,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 65,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 66,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 67,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": true,
+      "hops_before": 2,
+      "hops_after": 1,
+      "before_via_isolated": true
+     },
+     {
+      "source": 68,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 69,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 70,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 71,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 72,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 73,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 74,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 75,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 76,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 4,
+      "hops_after": 4,
+      "before_via_isolated": false
+     },
+     {
+      "source": 77,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 78,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 79,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 80,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 81,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 82,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 83,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 84,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 85,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 1,
+      "hops_after": 1,
+      "before_via_isolated": false
+     },
+     {
+      "source": 86,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 87,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 88,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 4,
+      "hops_after": 4,
+      "before_via_isolated": false
+     },
+     {
+      "source": 89,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 90,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 4,
+      "hops_after": 4,
+      "before_via_isolated": false
+     },
+     {
+      "source": 91,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 4,
+      "hops_after": 4,
+      "before_via_isolated": false
+     },
+     {
+      "source": 92,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 4,
+      "hops_after": 4,
+      "before_via_isolated": false
+     },
+     {
+      "source": 93,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 94,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 95,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     },
+     {
+      "source": 96,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 3,
+      "hops_after": 3,
+      "before_via_isolated": false
+     },
+     {
+      "source": 97,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 4,
+      "hops_after": 4,
+      "before_via_isolated": false
+     },
+     {
+      "source": 98,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 5,
+      "hops_after": 5,
+      "before_via_isolated": false
+     },
+     {
+      "source": 99,
+      "status": "ok",
+      "blocked_at": null,
+      "changed": false,
+      "hops_before": 2,
+      "hops_after": 2,
+      "before_via_isolated": false
+     }
+    ]
+   }
+  }
+ }
+}
